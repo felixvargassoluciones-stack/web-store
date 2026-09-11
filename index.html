@@ -3,295 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByteCoreLab | Soluciones de Software de Alto Impacto</title>
+    <title>ByteCoreLab | Ingeniería de Software & Soluciones Web</title>
     <style>
         :root {
-            --bg-color: #0d121f; 
-            --panel-bg: rgba(21, 29, 48, 0.5);
-            --accent-color: #00ffaa;
-            --accent-glow: rgba(0, 255, 170, 0.3);
-            --text-color: #ffffff;
-            --text-muted: #9bc0d9;
-            --nav-bg: rgba(13, 18, 31, 0.9);
-            --card-inner: #161f33;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --primary-accent: #e05e2b; /* El color naranja/óxido corporativo de la imagen */
+            --primary-hover: #c94f22;
+            --text-dark: #2d3748;
+            --text-muted: #718096;
+            --border-color: #e2e8f0;
         }
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(at 0% 0%, #1a243a 0px, transparent 60%),
-                radial-gradient(at 100% 100%, #0a0e1a 0px, transparent 60%);
-            color: var(--text-color);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
             min-height: 100vh;
             box-sizing: border-box;
         }
 
-        /* BARRA DE NAVEGACIÓN PREMIUM */
+        /* BARRA DE NAVEGACIÓN CORPORATIVA */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: var(--nav-bg);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 50px;
+            padding: 20px 80px;
             box-sizing: border-box;
             z-index: 1000;
         }
 
         .nav-logo {
-            font-weight: 800;
-            font-size: 1.4rem;
-            background: linear-gradient(45deg, #fff, var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 0.5px;
+            color: var(--text-dark);
+        }
+
+        .nav-logo span {
+            color: var(--primary-accent);
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
         }
 
         .nav-links a {
-            color: var(--text-color);
+            color: var(--text-dark);
             text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 600;
             transition: color 0.2s;
         }
 
         .nav-links a:hover, .nav-links a.active {
-            color: var(--accent-color);
+            color: var(--primary-accent);
         }
 
-        /* SECCIÓN PRINCIPAL: DISTRIBUCIÓN DE DOS COLUMNAS */
+        /* BLOQUE HERO PRINCIPAL */
+        .hero-section {
+            background-color: #eaecef; /* Fondo gris suave de la imagen */
+            width: 100%;
+            margin-top: 65px;
+            display: flex;
+            align-items: stretch;
+            min-height: 520px;
+            position: relative;
+            box-sizing: border-box;
+        }
+
         .hero-container {
             display: flex;
-            max-width: 1200px;
-            width: 90%;
-            margin: 140px auto 40px auto;
-            gap: 40px;
-            align-items: center;
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
             box-sizing: border-box;
         }
 
-        /* Columna Izquierda: Contenido y Descargas */
-        .hero-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            margin: 0;
-            line-height: 1.15;
-            letter-spacing: -1px;
-            background: linear-gradient(135deg, #ffffff 40%, var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            font-weight: 600;
-            text-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        /* Columna Derecha: Panel de Imagen / Showcase */
-        .hero-showcase {
-            flex: 1;
-            background-color: var(--panel-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            box-sizing: border-box;
+        /* Columna Izquierda: Mensajes y Botón */
+        .hero-text-side {
+            flex: 1.1;
+            padding: 80px 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 400px;
+            box-sizing: border-box;
+        }
+
+        .hero-text-side h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #ffffff; /* Texto blanco sobre el fondo oscuro de la imagen del banner */
+            margin: 0 0 20px 0;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+
+        /* Contenedor oscuro simulando el banner de la imagen */
+        .banner-box {
+            background-color: #3b3634; /* El tono marrón/oscuro de fondo del banner original */
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+            border-radius: 4px;
+            display: flex;
+            width: 100%;
+        }
+
+        .text-content-inner {
+            padding: 80px 50px;
+            flex: 1.2;
+        }
+
+        .text-content-inner p {
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            line-height: 1.6;
+            margin: 0 0 35px 0;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        .action-btn {
+            background-color: var(--primary-accent);
+            color: var(--bg-white);
+            text-decoration: none;
+            padding: 14px 28px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 2px;
+            transition: background-color 0.2s;
+            text-align: center;
+        }
+
+        .action-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            text-decoration: none;
+            padding: 14px 28px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 2px;
+            transition: background-color 0.2s;
+            text-align: center;
+        }
+
+        .secondary-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Columna Derecha: Imagen que tú elijas */
+        .hero-image-side {
+            flex: 0.9;
             position: relative;
             overflow: hidden;
+            background-color: #ccc;
         }
 
-        .showcase-header {
+        /* CAMBIA ESTA IMAGEN: Reemplaza la URL por la foto de tu equipo o interfaces */
+        .hero-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* PANEL DE DATOS DE CONTACTO RÁPIDO (Debajo del Banner) */
+        .info-bar {
+            background-color: var(--bg-white);
+            width: 100%;
+            border-bottom: 1px solid var(--border-color);
+            padding: 25px 80px;
+            box-sizing: border-box;
+        }
+
+        .info-bar-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .badge {
-            background: linear-gradient(135deg, rgba(0, 255, 170, 0.15), rgba(0, 102, 255, 0.15));
-            color: var(--accent-color);
-            border: 1px solid rgba(0, 255, 170, 0.2);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        /* DISEÑO DE BOTÓN REFORZADO */
-        .download-btn {
-            background: linear-gradient(135deg, var(--accent-color), #00bfff);
-            color: #050b14;
-            text-decoration: none;
-            text-align: center;
-            padding: 16px 40px;
-            border-radius: 12px;
-            font-weight: 800;
-            font-size: 1.15rem;
-            align-self: flex-start;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 0 30px var(--accent-glow);
-        }
-
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 40px rgba(0, 255, 170, 0.5);
-        }
-
-        /* GRILLA DE CARACTERÍSTICAS (ABAJO O EN SEGUNDO BLOQUE) */
-        .features-section {
-            max-width: 1200px;
-            width: 90%;
-            margin: 40px auto;
-            box-sizing: border-box;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-
-        .feature-item {
-            background: var(--card-inner);
-            padding: 25px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            transition: border-color 0.3s;
-        }
-
-        .feature-item:hover {
-            border-color: rgba(0, 255, 170, 0.2);
-        }
-
-        .feature-item h3 {
-            font-size: 1.2rem;
-            margin: 0 0 10px 0;
-            color: #ffffff;
-        }
-
-        .feature-item p {
+            gap: 50px;
             font-size: 0.95rem;
-            color: var(--text-muted);
-            margin: 0;
-            line-height: 1.6;
         }
 
-        .coming-soon {
-            text-align: center;
-            padding: 30px 20px;
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-dark);
+        }
+
+        .info-item strong {
+            color: var(--primary-accent);
+        }
+
+        /* BLOQUE INFERIOR (MÓVIL SIMULADO O SECCIÓN SOBRE NOSOTROS) */
+        .bottom-section {
             max-width: 1200px;
             width: 90%;
-            border: 2px dashed rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            margin: 20px auto 60px auto;
+            margin: 60px auto;
+            display: flex;
+            gap: 50px;
             box-sizing: border-box;
+        }
+
+        .bottom-text {
+            flex: 1.3;
+        }
+
+        .bottom-text h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin: 0 0 15px 0;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .bottom-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-accent);
+        }
+
+        .bottom-text p {
             color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .bottom-image-box {
+            flex: 0.7;
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        /* CAMBIA ESTA IMAGEN: Es la imagen pequeña que simula la vista del móvil abajo */
+        .bottom-image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            display: block;
         }
 
         footer {
-            padding: 30px 20px;
-            color: #4b5563;
+            background-color: var(--text-dark);
+            color: #a0aec0;
+            padding: 25px 20px;
             font-size: 0.85rem;
             text-align: center;
-            width: 100%;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
             margin-top: auto;
         }
 
-        /* RESPONSIVO PARA MÓVILES */
-        @media (max-width: 900px) {
-            .hero-container {
-                flex-direction: column;
-                margin-top: 100px;
-                gap: 30px;
-            }
-            nav { padding: 15px 20px; }
-            .hero-content h1 { font-size: 2.4rem; }
-            .download-btn { align-self: stretch; }
+        /* RESPONSIVO COMPLETO */
+        @media (max-width: 990px) {
+            nav { padding: 15px 30px; }
+            .banner-box { flex-direction: column; }
+            .hero-image-side { height: 300px; order: -1; }
+            .bottom-section { flex-direction: column; }
+            .info-bar-container { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ SUPERIOR -->
+    <!-- MENÚ SUPERIOR CORPORATIVO -->
     <nav>
-        <div class="nav-logo">ByteCoreLab</div>
+        <div class="nav-logo">ByteCore<span>Lab</span></div>
         <div class="nav-links">
-            <a href="index.html" class="active">Apps</a>
-            <a href="desarrollador.html">Desarrollador</a>
-            <a href="contacto.html">Contacto</a>
+            <a href="index.html" class="active">Sobre Nosotros</a>
+            <a href="index.html">Áreas de Práctica</a>
+            <a href="index.html">Blog</a>
+            <a href="index.html">Contacto</a>
         </div>
     </nav>
 
-    <!-- BLOQUE PRINCIPAL EN DOS COLUMNAS -->
-    <div class="hero-container">
-        
-        <!-- COLUMNA IZQUIERDA: MENSAJE CORPORATIVO -->
-        <div class="hero-content">
-            <div class="tagline">SOLUCIONES WEB Y DESKTOP A MEDIDA</div>
-            <h1>Ingeniería de Software de Alto Nivel</h1>
-            <p>En ByteCoreLab desarrollamos ecosistemas digitales y aplicaciones premium diseñadas para optimizar tus flujos de trabajo, automatizar procesos comerciales e impulsar la productividad diaria con estabilidad absoluta.</p>
-            <a href="app/chispahorro.apk" download="Chispahorro_Inteligente.apk" class="download-btn">Descargar Lanzamiento APK</a>
-        </div>
+    <!-- BLOQUE PRINCIPAL (BANNER COMBINADO GRIS/MARRÓN CON FOTO) -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="banner-box">
+                
+                <!-- SUB-COLUMNA IZQUIERDA: TEXTOS Y ACCIONES -->
+                <div class="text-content-inner">
+                    <h1>Abogacía de Empresa y Cambio Técnico</h1>
+                    <p>Desarrollamos soluciones de software robustas e infraestructura inteligente a la medida. Tu aliada tecnológica perfecta para optimizar la administración, gestionar finanzas y automatizar procesos comerciales de tu negocio en la era digital.</p>
+                    <div class="btn-container">
+                        <!-- Enlace directo para descargar tu APK -->
+                        <a href="app/chispahorro.apk" download="Chispahorro_Inteligente.apk" class="action-btn">Descargar APK</a>
+                        <a href="#" class="secondary-btn">Soluciones Windows</a>
+                    </div>
+                </div>
 
-        <!-- COLUMNA DERECHA: ENFOQUE EN EL PRODUCTO ACTUAL (CHISPAHORRO) -->
-        <div class="hero-showcase">
-            <div class="showcase-header">
-                <h2 style="margin:0; font-size: 1.8rem; font-weight: 800;">Chispahorro Inteligente</h2>
-                <span class="badge">Android 🤖</span>
-            </div>
-            <p style="color: var(--accent-color); font-weight: 600; margin: 0 0 15px 0;">⚡ Tu aliada perfecta para ganarle a la inflación en el súper.</p>
-            <p style="margin: 0; line-height: 1.6; font-size: 1rem; color: var(--text-muted);">
-                El gestor financiero definitivo para la despensa del hogar. Registra precios reales directamente en los pasillos de la tienda, audita tu presupuesto en tiempo real y recibe alertas automatizadas sobre suministros críticos en tu alacena gracias a su asistente algorítmico integrado.
-            </p>
-            
-            <!-- ESPACIO RESERVADO PARA FUTURA IMAGEN -->
-            <div style="margin-top: 25px; height: 120px; border: 1px dashed rgba(0, 255, 170, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(0,255,170,0.02);">
-                <span style="color: rgba(255,255,255,0.4); font-size: 0.9rem;">[ Captura de Pantalla de la Interfaz en Camino ]</span>
+                <!-- SUB-COLUMNA DERECHA: FOTO PRINCIPAL -->
+                <div class="hero-image-side">
+                    <!-- Puedes cambiar "https://placeholder.com" por tu propia foto (ej. img/equipo.jpg) -->
+                    <img src="https://placeholder.com" alt="Showcase Tecnológico">
+                </div>
+
             </div>
         </div>
+    </section>
 
-    </div>
-
-    <!-- SECCIÓN DE CARACTERÍSTICAS DETALLADAS -->
-    <section class="features-section">
-        <div class="features-grid">
-            <div class="feature-item">
+    <!-- BARRA DE INFORMACIÓN DE CONTACTO RÁPIDO -->
+    <div class="info-bar">
+        <div class="info-bar-container">
+            <div class="info-item">
