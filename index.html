@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByteCoreLab | Ingeniería de Software & Soluciones Web</title>
+    
+    <!-- ==========================================
+         PARTE 1: REGLAS DE ESTILO (CSS)
+         ========================================== -->
     <style>
         :root {
-            --bg-light: #f8f9fa;
+            --bg-light: #f4f5f7; /* Gris suave de fondo general */
             --bg-white: #ffffff;
-            --primary-accent: #e05e2b; /* El color naranja/óxido corporativo de la imagen */
+            --primary-accent: #e05e2b; /* Naranja/óxido corporativo */
             --primary-hover: #c94f22;
+            --bg-dark-banner: #3b3634; /* Tono marrón/oscuro del carrusel */
             --text-dark: #2d3748;
             --text-muted: #718096;
             --border-color: #e2e8f0;
+        }
+
+        /* Configuración global y desplazamiento suave */
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -27,7 +37,7 @@
             box-sizing: border-box;
         }
 
-        /* BARRA DE NAVEGACIÓN CORPORATIVA */
+        /* BARRA DE NAVEGACIÓN FIJA */
         nav {
             position: fixed;
             top: 0;
@@ -67,205 +77,287 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover {
             color: var(--primary-accent);
         }
 
-        /* BLOQUE HERO PRINCIPAL */
+        /* SECCIÓN HERO (Presentación Superior) */
         .hero-section {
-            background-color: #eaecef; /* Fondo gris suave de la imagen */
-            width: 100%;
+            background-color: var(--bg-white);
             margin-top: 65px;
+            padding: 80px 80px;
             display: flex;
-            align-items: stretch;
-            min-height: 520px;
-            position: relative;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
             box-sizing: border-box;
         }
 
-        .hero-container {
-            display: flex;
-            max-width: 1300px;
-            width: 100%;
-            margin: 0 auto;
-            box-sizing: border-box;
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
         }
 
-        /* Columna Izquierda: Mensajes y Botón */
-        .hero-text-side {
-            flex: 1.1;
-            padding: 80px 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            box-sizing: border-box;
-        }
-
-        .hero-text-side h1 {
-            font-size: 3.2rem;
+        .hero-text h1 {
+            font-size: 3rem;
             font-weight: 700;
-            color: #ffffff; /* Texto blanco sobre el fondo oscuro de la imagen del banner */
+            color: var(--text-dark);
             margin: 0 0 20px 0;
-            line-height: 1.15;
-            letter-spacing: -0.5px;
+            line-height: 1.2;
         }
 
-        /* Contenedor oscuro simulando el banner de la imagen */
-        .banner-box {
-            background-color: #3b3634; /* El tono marrón/oscuro de fondo del banner original */
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
-            border-radius: 4px;
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 0 0 30px 0;
+        }
+
+        .hero-image {
+            flex: 1;
             display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
             width: 100%;
+            max-width: 550px;
+            height: auto;
+            border-radius: 4px;
+            object-fit: cover;
         }
 
-        .text-content-inner {
-            padding: 80px 50px;
-            flex: 1.2;
-        }
-
-        .text-content-inner p {
-            font-size: 1.15rem;
-            color: #e2e8f0;
-            line-height: 1.6;
-            margin: 0 0 35px 0;
-        }
-
-        .btn-container {
-            display: flex;
-            gap: 15px;
-        }
-
-        .action-btn {
-            background-color: var(--primary-accent);
-            color: var(--bg-white);
-            text-decoration: none;
-            padding: 14px 28px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            border-radius: 2px;
-            transition: background-color 0.2s;
+        /* SECCIÓN CARRUSEL (Tarjetas de Descargas) */
+        .carousel-section {
+            background-color: var(--bg-dark-banner);
+            padding: 60px 80px;
+            color: #ffffff;
+            position: relative;
             text-align: center;
         }
 
-        .action-btn:hover {
+        .carousel-section h2 {
+            font-size: 2rem;
+            margin: 0 0 40px 0;
+            font-weight: 600;
+        }
+
+        /* Contenedor del scroll e interactividad */
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .carousel-container {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 10px;
+            width: 100%;
+            scrollbar-width: none; /* Ocultar barra en Firefox */
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Ocultar barra en Chrome/Safari */
+        }
+
+        /* Tarjeta de producto modular */
+        .card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            min-width: 320px;
+            max-width: 320px;
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin: 0 0 15px 0;
+            color: #ffffff;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.6;
+            margin: 0 0 25px 0;
+            flex-grow: 1;
+        }
+
+        .card-btn {
+            background-color: var(--primary-accent);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 3px;
+            text-align: center;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+
+        .card-btn:hover {
             background-color: var(--primary-hover);
         }
 
-        .secondary-btn {
-            background-color: transparent;
+        /* Botones de navegación de flechas */
+        .carousel-nav-btn {
+            background-color: rgba(0, 0, 0, 0.5);
             color: #ffffff;
-            border: 1px solid #ffffff;
-            text-decoration: none;
-            padding: 14px 28px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            border-radius: 2px;
-            transition: background-color 0.2s;
-            text-align: center;
-        }
-
-        .secondary-btn:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Columna Derecha: Imagen que tú elijas */
-        .hero-image-side {
-            flex: 0.9;
-            position: relative;
-            overflow: hidden;
-            background-color: #ccc;
-        }
-
-        /* CAMBIA ESTA IMAGEN: Reemplaza la URL por la foto de tu equipo o interfaces */
-        .hero-image-side img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* PANEL DE DATOS DE CONTACTO RÁPIDO (Debajo del Banner) */
-        .info-bar {
-            background-color: var(--bg-white);
-            width: 100%;
-            border-bottom: 1px solid var(--border-color);
-            padding: 25px 80px;
-            box-sizing: border-box;
-        }
-
-        .info-bar-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            gap: 50px;
-            font-size: 0.95rem;
-        }
-
-        .info-item {
+            border: none;
+            font-size: 1.5rem;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
             display: flex;
             align-items: center;
-            gap: 10px;
-            color: var(--text-dark);
+            justify-content: center;
+            transition: background-color 0.2s;
         }
 
-        .info-item strong {
-            color: var(--primary-accent);
-        }
-
-        /* BLOQUE INFERIOR (MÓVIL SIMULADO O SECCIÓN SOBRE NOSOTROS) */
-        .bottom-section {
-            max-width: 1200px;
-            width: 90%;
-            margin: 60px auto;
-            display: flex;
-            gap: 50px;
-            box-sizing: border-box;
-        }
-
-        .bottom-text {
-            flex: 1.3;
-        }
-
-        .bottom-text h2 {
-            font-size: 1.8rem;
-            color: var(--text-dark);
-            margin: 0 0 15px 0;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .bottom-text h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
+        .carousel-nav-btn:hover {
             background-color: var(--primary-accent);
         }
 
-        .bottom-text p {
+        .btn-left { left: -60px; }
+        .btn-right { right: -60px; }
+
+        /* SECCIÓN SOBRE NOSOTROS */
+        .about-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 90px 20px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .about-section h2 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin: 0 0 25px 0;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
             color: var(--text-muted);
-            line-height: 1.7;
-            font-size: 1rem;
+            line-height: 1.8;
+            margin: 0;
         }
 
-        .bottom-image-box {
-            flex: 0.7;
+        /* SECCIÓN CONTACTO */
+        .contact-section {
             background-color: var(--bg-white);
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border-radius: 4px;
+            border-top: 1px solid var(--border-color);
+            padding: 80px 80px;
+            display: flex;
+            gap: 50px;
+            box-sizing: border-box;
         }
 
-        /* CAMBIA ESTA IMAGEN: Es la imagen pequeña que simula la vista del móvil abajo */
-        .bottom-image-box img {
-            width: 100%;
-            height: auto;
-            border-radius: 2px;
-            display: block;
+        .contact-info {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin: 0 0 20px 0;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+            font-size: 0.95rem;
+        }
+
+        .contact-details p {
+            margin: 10px 0;
+            color: var(--text-dark);
+        }
+
+        .contact-details strong {
+            color: var(--primary-accent);
+        }
+
+        .contact-form-container {
+            flex: 1.5;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background-color: var(--bg-light);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-accent);
+            background-color: #ffffff;
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            background-color: var(--primary-accent);
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-hover);
         }
 
         footer {
@@ -277,56 +369,147 @@
             margin-top: auto;
         }
 
-        /* RESPONSIVO COMPLETO */
+        /* RESPONSIVO */
         @media (max-width: 990px) {
             nav { padding: 15px 30px; }
-            .banner-box { flex-direction: column; }
-            .hero-image-side { height: 300px; order: -1; }
-            .bottom-section { flex-direction: column; }
-            .info-bar-container { flex-direction: column; gap: 15px; }
+            .hero-section { flex-direction: column; padding: 40px 30px; text-align: center; }
+            .carousel-section { padding: 40px 40px; }
+            .btn-left, .btn-right { display: none; } /* Navegación táctil nativa en móvil */
+            .contact-section { flex-direction: column; padding: 40px 30px; }
+            .contact-form { grid-template-columns: 1fr; }
+            .form-group.full-width { grid-column: span 1; }
+            .submit-btn { grid-column: span 1; }
         }
     </style>
 </head>
+
+<!-- ==========================================
+     PARTE 2: CUERPO DE CONTENIDO (HTML)
+     ========================================== -->
 <body>
 
-    <!-- MENÚ SUPERIOR CORPORATIVO -->
+    <!-- MENÚ SUPERIOR CON ENLACES DE ANCLA -->
     <nav>
         <div class="nav-logo">ByteCore<span>Lab</span></div>
         <div class="nav-links">
-            <a href="index.html" class="active">Sobre Nosotros</a>
-            <a href="index.html">Áreas de Práctica</a>
-            <a href="index.html">Blog</a>
-            <a href="index.html">Contacto</a>
+            <a href="#inicio">Inicio</a>
+            <a href="#descargas">Descargas</a>
+            <a href="#nosotros">Sobre Nosotros</a>
+            <a href="#contacto">Contacto</a>
         </div>
     </nav>
 
-    <!-- BLOQUE PRINCIPAL (BANNER COMBINADO GRIS/MARRÓN CON FOTO) -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="banner-box">
-                
-                <!-- SUB-COLUMNA IZQUIERDA: TEXTOS Y ACCIONES -->
-                <div class="text-content-inner">
-                    <h1>Abogacía de Empresa y Cambio Técnico</h1>
-                    <p>Desarrollamos soluciones de software robustas e infraestructura inteligente a la medida. Tu aliada tecnológica perfecta para optimizar la administración, gestionar finanzas y automatizar procesos comerciales de tu negocio en la era digital.</p>
-                    <div class="btn-container">
-                        <!-- Enlace directo para descargar tu APK -->
-                        <a href="app/chispahorro.apk" download="Chispahorro_Inteligente.apk" class="action-btn">Descargar APK</a>
-                        <a href="#" class="secondary-btn">Soluciones Windows</a>
-                    </div>
-                </div>
-
-                <!-- SUB-COLUMNA DERECHA: FOTO PRINCIPAL -->
-                <div class="hero-image-side">
-                    <!-- Puedes cambiar "https://placeholder.com" por tu propia foto (ej. img/equipo.jpg) -->
-                    <img src="https://placeholder.com" alt="Showcase Tecnológico">
-                </div>
-
-            </div>
+    <!-- SECCIÓN DE BIENVENIDA -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-text">
+            <h1>Your Information</h1>
+            <p>Desarrollamos soluciones de software robustas e infraestructura inteligente a la medida. Tu aliada tecnológica perfecta para optimizar la administración, gestionar finanzas y automatizar procesos comerciales de tu negocio en la era digital.</p>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600" alt="Showcase Tecnológico">
         </div>
     </section>
 
-    <!-- BARRA DE INFORMACIÓN DE CONTACTO RÁPIDO -->
-    <div class="info-bar">
-        <div class="info-bar-container">
-            <div class="info-item">
+    <!-- SECCIÓN DE DESCARGAS (CARRUSEL HORIZONTAL) -->
+    <section id="descargas" class="carousel-section">
+        <h2>Best Features</h2>
+        
+        <div class="carousel-wrapper">
+            <!-- Botón Desplazamiento Izquierdo -->
+            <button class="carousel-nav-btn btn-left" onclick="scrollCarousel(-350)">&#10094;</button>
+            
+            <div class="carousel-container" id="softwareCarousel">
+                
+                <!-- TARJETA 1: CHISPAHORRO INTELIGENTE -->
+                <div class="card">
+                    <div>
+                        <h3>Chispahorro Inteligente</h3>
+                        <p>Gestor financiero del hogar y alacena inteligente. Planifica compras con precios en cero, monitorea presupuestos con alertas y exporta auditorías en PDF.</p>
+                    </div>
+                    <a href="app/chispahorro.apk" download="Chispahorro_Inteligente.apk" class="card-btn">Descargar APK</a>
+                </div>
+
+                <!-- TARJETA 2: Marcador para futura expansión -->
+                <div class="card">
+                    <div>
+                        <h3>Solución Futura 1</h3>
+                        <p>Espacio reservado para tu próximo lanzamiento de software móvil o herramienta industrial SaaS. Configuración rápida.</p>
+                    </div>
+                    <a href="#" class="card-btn">Próximamente</a>
+                </div>
+
+                <!-- TARJETA 3: Marcador para futura expansión -->
+                <div class="card">
+                    <div>
+                        <h3>Solución Futura 2</h3>
+                        <p>Espacio reservado para tu próximo lanzamiento de software móvil o herramienta industrial SaaS. Configuración rápida.</p>
+                    </div>
+                    <a href="#" class="card-btn">Próximamente</a>
+                </div>
+
+            </div>
+            
+            <!-- Botón Desplazamiento Derecho -->
+            <button class="carousel-nav-btn btn-right" onclick="scrollCarousel(350)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE NOSOTROS -->
+    <section id="nosotros" class="about-section">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO -->
+    <section id="contacto" class="contact-section">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nos pondremos en contacto contigo lo antes posible para evaluar tus requerimientos y proyectos.</p>
+            <div class="contact-details">
+                <p><strong>Email:</strong> info@yourblog.com</p>
+                <p><strong>Teléfono:</strong> 123-456-789</p>
+            </div>
+        </div>
+        
+        <div class="contact-form-container">
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="mobile" placeholder="Teléfono/Móvil">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="address" placeholder="Dirección">
+                </div>
+                <div class="form-group full-width">
+                    <textarea name="message" placeholder="Tu Mensaje" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        Your Blog Company S.L. All rights reserved. © 2026
+    </footer>
+
+    <!-- ==========================================
+         PARTE 3: LÓGICA DE INTERACCIÓN (JAVASCRIPT)
+         ========================================== -->
+    <script>
+        function scrollCarousel(scrollOffset) {
+            const container = document.getElementById('softwareCarousel');
+            container.scrollBy({
+                left: scrollOffset,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+</body>
+</html>
