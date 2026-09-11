@@ -3,20 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByteCoreLab Store</title>
+    <title>ByteCoreLab Store | Software de Alto Nivel</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            text-align: center;
-            padding: 50px;
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #151d30;
+            --accent-color: #00ff88;
+            --text-color: #ffffff;
+            --text-muted: #8a99ad;
         }
-        h1 { color: #00ff88; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            max-width: 800px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            letter-spacing: -1px;
+            background: linear-gradient(45deg, #ffffff, var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+            max-width: 1000px;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #222f4c;
+            border-radius: 16px;
+            padding: 30px;
+            width: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+        }
+
+        .badge {
+            background-color: rgba(0, 255, 136, 0.1);
+            color: var(--accent-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            align-self: flex-start;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            margin: 0 0 10px 0;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0 0 30px 0;
+            flex-grow: 1;
+        }
+
+        .download-btn {
+            background-color: var(--accent-color);
+            color: #050505;
+            text-decoration: none;
+            text-align: center;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            display: block;
+        }
+
+        .download-btn:hover {
+            background-color: #00e177;
+            transform: scale(1.02);
+        }
+
+        .download-btn:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <p>¡Este cambio se subirá solo al presionar guardar 1!</p>
-    <p>¡Conexión limpia y desde cero completada con éxito!</p>
+
+    <header>
+        <h1>ByteCoreLab Store</h1>
+        <p>Software e infraestructura de alto nivel. Descarga nuestras aplicaciones verificadas optimizadas para una máxima estabilidad y rendimiento.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- TARJETA APLICACIÓN 1 -->
+        <div class="card">
+            <span class="badge">Windows App 🪟</span>
+            <h2>Nombre de tu App 1</h2>
+            <p>Aquí escribirás una descripción impactante de lo que hace tu primer programa. Explica brevemente el problema industrial o personal que soluciona de forma eficiente.</p>
+            <!-- En el href pondrás el enlace de tu instalador .exe más adelante -->
+            <a href="#" download class="download-btn">Descargar para Windows</a>
+        </div>
+
+        <!-- TARJETA APLICACIÓN 2 -->
+        <div class="card">
+            <span class="badge">Android App 🤖</span>
+            <h2>Nombre de tu App 2</h2>
+            <p>Aquí escribirás la descripción para tu segunda aplicación móvil. Detalla los beneficios clave y cómo mejora el flujo de trabajo o la comodidad del usuario.</p>
+            <!-- En el href pondrás el enlace de tu instalador .apk más adelante -->
+            <a href="#" download class="download-btn">Descargar APK Android</a>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 ByteCoreLab Store. Todos los derechos reservados.
+    </footer>
+
 </body>
 </html>
