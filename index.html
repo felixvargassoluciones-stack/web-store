@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByteCoreLab Store | Software de Alto Nivel</title>
+    <title>ByteCoreLab Store | Chispahorro Inteligente</title>
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -11,6 +11,7 @@
             --accent-color: #00ff88;
             --text-color: #ffffff;
             --text-muted: #8a99ad;
+            --alert-red: #ff4a4a;
         }
 
         body {
@@ -23,18 +24,19 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            box-sizing: border-box;
         }
 
         header {
             text-align: center;
-            padding: 60px 20px 40px 20px;
+            padding: 50px 20px 30px 20px;
             max-width: 800px;
         }
 
         header h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin: 0 0 15px 0;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 0 10px 0;
             letter-spacing: -1px;
             background: linear-gradient(45deg, #ffffff, var(--accent-color));
             -webkit-background-clip: text;
@@ -49,60 +51,78 @@
             line-height: 1.6;
         }
 
-        .container {
-            display: flex;
-            gap: 30px;
-            padding: 20px;
-            max-width: 1000px;
-            width: 100%;
-            justify-content: center;
-            flex-wrap: wrap;
-            box-sizing: border-box;
-        }
-
-        .card {
+        .main-showcase {
             background-color: var(--card-bg);
             border: 1px solid #222f4c;
-            border-radius: 16px;
-            padding: 30px;
-            width: 380px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 900px;
+            width: 90%;
+            margin: 20px auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             box-sizing: border-box;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .product-title {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 700;
         }
 
         .badge {
             background-color: rgba(0, 255, 136, 0.1);
             color: var(--accent-color);
-            padding: 6px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            align-self: flex-start;
-            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .card h2 {
-            font-size: 1.6rem;
-            margin: 0 0 10px 0;
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
-        .card p {
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature-item h3 {
+            font-size: 1.15rem;
+            margin: 0 0 8px 0;
+            color: #ffffff;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
             color: var(--text-muted);
-            font-size: 1rem;
+            margin: 0;
             line-height: 1.5;
-            margin: 0 0 30px 0;
-            flex-grow: 1;
+        }
+
+        .download-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-top: 1px solid #222f4c;
+            padding-top: 30px;
+            margin-top: 30px;
         }
 
         .download-btn {
@@ -110,29 +130,55 @@
             color: #050505;
             text-decoration: none;
             text-align: center;
-            padding: 14px;
-            border-radius: 10px;
+            padding: 16px 40px;
+            border-radius: 12px;
             font-weight: bold;
-            font-size: 1.05rem;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-            display: block;
+            font-size: 1.2rem;
+            transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
         }
 
         .download-btn:hover {
             background-color: #00e177;
             transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3);
         }
 
         .download-btn:active {
             transform: scale(0.98);
         }
 
+        .coming-soon {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 900px;
+            width: 90%;
+            border: 2px dashed #222f4c;
+            border-radius: 24px;
+            margin: 20px auto 40px auto;
+            box-sizing: border-box;
+        }
+
+        .coming-soon h2 {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin: 0 0 10px 0;
+        }
+
+        .coming-soon p {
+            color: #56667d;
+            margin: 0;
+            font-size: 1rem;
+        }
+
         footer {
             margin-top: auto;
-            padding: 40px 20px;
+            padding: 30px 20px;
             color: var(--text-muted);
             font-size: 0.9rem;
             text-align: center;
+            width: 100%;
+            border-top: 1px solid #151d30;
         }
     </style>
 </head>
@@ -140,30 +186,52 @@
 
     <header>
         <h1>ByteCoreLab Store</h1>
-        <p>Software e infraestructura de alto nivel. Descarga nuestras aplicaciones verificadas optimizadas para una máxima estabilidad y rendimiento.</p>
+        <p>Soluciones tecnológicas e infraestructura de alto nivel orientadas a la eficiencia diaria.</p>
     </header>
 
-    <div class="container">
+    <!-- LANZAMIENTO ESTRELLA: CHISPAHORRO -->
+    <main class="main-showcase">
+        <div class="product-header">
+            <h2 class="product-title">Chispahorro Inteligente</h2>
+            <span class="badge">Android APK 🤖</span>
+        </div>
+        
+        <div class="tagline">⚡ Tu aliada perfecta para controlar el gasto del súper y ganarle a la inflación.</div>
+        
+        <p style="color: var(--text-muted); line-height: 1.6; font-size: 1.05rem;">
+            Diseñada para convertirse en el cuaderno de cuentas definitivo del hogar. Planifica las compras de la despensa de forma fácil, cuida tu presupuesto en tiempo real y anticípate a lo que está por terminarse en la alacena.
+        </p>
 
-        <!-- TARJETA APLICACIÓN 1 -->
-        <div class="card">
-            <span class="badge">Windows App 🪟</span>
-            <h2>Nombre de tu App 1</h2>
-            <p>Aquí escribirás una descripción impactante de lo que hace tu primer programa. Explica brevemente el problema industrial o personal que soluciona de forma eficiente.</p>
-            <!-- En el href pondrás el enlace de tu instalador .exe más adelante -->
-            <a href="#" download class="download-btn">Descargar para Windows</a>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>📝 Planificación Rápida</h3>
+                <p>Arma tu lista en casa anotando productos y cantidades al instante. Los precios se mantienen en cero para que te concentres únicamente en lo que realmente te hace falta.</p>
+            </div>
+            <div class="feature-item">
+                <h3>💵 Monitoreo en Tiempo Real</h3>
+                <p>Introduce el precio real en el pasillo del súper y visualiza tres tarjetas: tu presupuesto, lo gastado y tu saldo disponible. La app se vuelve roja si te estás pasando del límite.</p>
+            </div>
+            <div class="feature-item">
+                <h3>🧠 Asistente Predictivo</h3>
+                <p>Un semáforo inteligente analiza tu historial en secreto y te avisa qué productos críticos están por agotarse en la alacena, sugiriéndolos automáticamente en tu nueva lista.</p>
+            </div>
+            <div class="feature-item">
+                <h3>📊 Reporte de Inflación</h3>
+                <p>Genera un Ticket Digital en formato PDF listo para compartir por WhatsApp. Evalúa cuánto dinero rescataste en ofertas y monitorea las variaciones de precios.</p>
+            </div>
         </div>
 
-        <!-- TARJETA APLICACIÓN 2 -->
-        <div class="card">
-            <span class="badge">Android App 🤖</span>
-            <h2>Nombre de tu App 2</h2>
-            <p>Aquí escribirás la descripción para tu segunda aplicación móvil. Detalla los beneficios clave y cómo mejora el flujo de trabajo o la comodidad del usuario.</p>
-            <!-- En el href pondrás el enlace de tu instalador .apk más adelante -->
-            <a href="#" download class="download-btn">Descargar APK Android</a>
+        <div class="download-section">
+            <!-- El enlace definitivo se colocará en el atributo href -->
+            <a href="app/chispahorro.apk" download="Chispahorro_Inteligente.apk" class="download-btn">Descargar APK Gratuita</a>
         </div>
+    </main>
 
-    </div>
+    <!-- ESPACIO DE EXPECTATIVA -->
+    <section class="coming-soon">
+        <h2>Próximamente: Soluciones de Escritorio e Industria 🪟</h2>
+        <p>Estamos compilando nuestras próximas herramientas nativas de alto nivel para Windows.</p>
+    </section>
 
     <footer>
         &copy; 2026 ByteCoreLab Store. Todos los derechos reservados.
