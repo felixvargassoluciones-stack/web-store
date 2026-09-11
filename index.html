@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByteCoreLab Store | Software de Alto Impacto</title>
-    <style>
+        <style>
         :root {
-            --bg-color: #030712;
-            --card-bg: rgba(17, 24, 39, 0.7);
+            /* Cambiamos a un fondo gris espacial moderno y claro */
+            --bg-color: #1e2530; 
+            --card-bg: #111622;
             --accent-color: #00ffaa;
-            --accent-glow: rgba(0, 255, 170, 0.4);
-            --text-color: #f3f4f6;
-            --text-muted: #9ca3af;
-            --nav-bg: rgba(3, 7, 18, 0.85);
+            --accent-glow: rgba(0, 255, 170, 0.3);
+            --text-color: #ffffff;
+            --text-muted: #9bc0d9;
+            --nav-bg: rgba(17, 22, 34, 0.9);
         }
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-color);
+            /* Gradiente satinado para dar profundidad sin oscurecer la pantalla */
             background-image: 
-                radial-gradient(at 0% 0%, rgba(0, 255, 170, 0.05) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(0, 102, 255, 0.05) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, #2a3446 0px, transparent 70%),
+                radial-gradient(at 100% 100%, #161c26 0px, transparent 70%);
             color: var(--text-color);
             margin: 0;
             padding: 0;
@@ -30,6 +32,7 @@
             min-height: 100vh;
             box-sizing: border-box;
         }
+
 
         /* BARRA DE NAVEGACIÓN DE ALTO NIVEL */
         nav {
