@@ -5,22 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByteCoreLab | Ingeniería de Software & Soluciones Web</title>
     
-    <!-- ==========================================
-         PARTE 1: REGLAS DE ESTILO (CSS)
-         ========================================== -->
     <style>
         :root {
-            --bg-light: #f4f5f7; /* Gris suave de fondo general */
+            --bg-light: #f4f5f7;
             --bg-white: #ffffff;
             --primary-accent: #e05e2b; /* Naranja/óxido corporativo */
             --primary-hover: #c94f22;
-            --bg-dark-banner: #3b3634; /* Tono marrón/oscuro del carrusel */
+            --bg-dark-banner: #3b3634; /* Tono marrón/oscuro de descargas */
             --text-dark: #2d3748;
             --text-muted: #718096;
             --border-color: #e2e8f0;
+            --btn-blue: #00b4d8; /* Azul para Download Now */
+            --btn-blue-hover: #0077b6;
         }
 
-        /* Configuración global y desplazamiento suave */
         html {
             scroll-behavior: smooth;
         }
@@ -81,20 +79,20 @@
             color: var(--primary-accent);
         }
 
-                /* SECCIÓN HERO (Fondo Completo Modificado) */
+        /* SECCIÓN HERO CENTRADA */
         .hero-section {
             margin-top: 65px;
             position: relative;
-            min-height: 90vh; /* Controla la altura del banner superior */
+            min-height: 90vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             padding: 0 80px;
             box-sizing: border-box;
             overflow: hidden;
-            scroll-margin-top: 65px; /* Hace que se clave perfecto en la franja */
+            scroll-margin-top: 65px;
         }
 
-        /* Capa oscura semitransparente sobre la foto para que el texto sea legible */
         .hero-section::before {
             content: '';
             position: absolute;
@@ -102,55 +100,53 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.55); /* Ajusta el 0.55 si quieres más o menos brillo */
+            background: rgba(0, 0, 0, 0.55);
             z-index: 2;
         }
 
         .hero-text {
             position: relative;
-            z-index: 3; /* Se posiciona por encima de la capa oscura */
-            max-width: 650px;
-            text-align: left;
+            z-index: 3;
+            max-width: 750px;
+            text-align: center;
+            margin: 0 auto;
         }
 
         .hero-text h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             font-weight: 700;
-            color: #ffffff; /* Texto blanco para alto contraste */
+            color: #ffffff;
             margin: 0 0 20px 0;
             line-height: 1.2;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-text p {
-            font-size: 1.15rem;
-            color: #e2e8f0; /* Blanco grisáceo suave */
+            font-size: 1.2rem;
+            color: #e2e8f0;
             line-height: 1.7;
-            margin: 0;
+            margin: 0 0 30px 0;
             text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
 
         .hero-btn {
             display: inline-block;
-            margin-top: 25px; /* Separa el botón del párrafo */
-            background-color: var(--primary-accent); /* Tu naranja corporativo */
+            background-color: var(--primary-accent);
             color: #ffffff;
             text-decoration: none;
-            padding: 12px 30px;
-            font-size: 1rem;
+            padding: 14px 40px;
+            font-size: 1.05rem;
             font-weight: 700;
             border-radius: 4px;
             transition: background-color 0.2s, transform 0.2s;
-            box-shadow: 0 4px 10px rgba(224, 94, 43, 0.3);
+            box-shadow: 0 4px 15px rgba(224, 94, 43, 0.4);
         }
 
         .hero-btn:hover {
             background-color: var(--primary-hover);
-            transform: translateY(-2px); /* Pequeño efecto flotante al pasar el mouse */
+            transform: translateY(-2px);
         }
 
-
-        /* La imagen ahora se estira por completo detrás sin deformarse */
         .hero-image {
             position: absolute;
             top: 0;
@@ -161,24 +157,21 @@
         }
 
         .hero-image img {
-           position: absolute; /* Agrega esta línea */
-           top: 0;             /* Agrega esta línea */
-           left: 0;            /* Agrega esta línea */
+           position: absolute;
+           top: 0;
+           left: 0;
            width: 100%;
            height: 100%;
-           object-fit: cover; /* Recorta los bordes inteligentemente para no distorsionar */
+           object-fit: cover;
            object-position: center;
         }
-
-
-
-        /* SECCIÓN CARRUSEL (Tarjetas de Descargas) */
+        /* SECCIÓN DE DESCARGAS POR CATEGORÍAS */
         .carousel-section {
-            background-image: linear-gradient(rgba(59, 54, 52, 0.85), rgba(59, 54, 52, 0.85)), url('imagenes/img.chispahorro2.jpg');
+            background-image: linear-gradient(rgba(59, 54, 52, 0.88), rgba(59, 54, 52, 0.88)), url('imagenes/img.chispahorro2.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Da un efecto de movimiento elegante al bajar la página */
-            padding: 120px 80px; /* Hace la franja más ancha verticalmente */
+            background-attachment: fixed;
+            padding: 100px 80px;
             color: #ffffff;
             position: relative;
             text-align: center;
@@ -186,78 +179,78 @@
             scroll-margin-top: 65px; 
         }
 
-
         .carousel-section h2 {
-            font-size: 2rem;
-            margin: 0 0 40px 0;
-            font-weight: 600;
+            font-size: 2.2rem;
+            margin: 0 0 50px 0;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
-        /* Contenedor del scroll e interactividad */
-        .carousel-wrapper {
-            position: relative;
+        .categories-grid {
             display: flex;
-            align-items: center;
+            justify-content: center;
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
+            flex-wrap: wrap;
         }
 
-        .carousel-container {
-            display: flex;
-            justify-content: center; /* Alinea los elementos al centro horizontalmente */
-            gap: 30px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding: 20px 10px;
-            width: 100%;
-            /* Ocultar barra en Firefox */
-            scrollbar-width: none; 
-        }
-
-
-        .carousel-container::-webkit-scrollbar {
-            display: none; /* Ocultar barra en Chrome/Safari */
-        }
-
-        /* Nueva Tarjeta Estilo Premium con Foto Superior */
+        /* DISEÑO DE TARJETA CORTA COMPACTA */
         .card {
-            background-color: #ffffff; /* Fondo blanco de la imagen de muestra */
+            background-color: #ffffff;
             border-radius: 8px;
-            min-width: 310px;
-            max-width: 310px;
+            width: 320px;
             box-sizing: border-box;
             text-align: left;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            overflow: hidden; /* Corta la imagen en las esquinas redondeadas superiores */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombreado flotante premium */
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Contenedor y ajuste de la foto de la tarjeta */
         .card-image-top {
             width: 100%;
-            height: 360px; /* Aumentamos la altura de 180px a 360px para revelar más interfaz */
+            height: 180px;
             overflow: hidden;
             background-color: #eaecef;
+            position: relative;
         }
 
         .card-image-top img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Adapta la captura sin deformarla */
-            object-position: top;
+            object-fit: cover;
+            object-position: center;
         }
 
-        /* Contenedor interno para los textos y el botón */
+        .card.under-construction {
+            opacity: 0.75;
+            background-color: #f7fafc;
+        }
+
+        .construction-overlay {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .card-body {
-            padding: 22px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -266,29 +259,28 @@
         .card h3 {
             font-size: 1.25rem;
             font-weight: 700;
-            margin: 0 0 12px 0;
-            color: #2d3748; /* Texto oscuro para legibilidad sobre blanco */
+            margin: 0 0 10px 0;
+            color: #2d3748;
         }
 
         .card p {
-            font-size: 0.92rem;
-            color: #4a5568; /* Gris corporativo intermedio */
+            font-size: 0.9rem;
+            color: #4a5568;
             line-height: 1.6;
             margin: 0 0 20px 0;
             flex-grow: 1;
         }
 
-
         .card-btn {
             background-color: var(--primary-accent);
             color: #ffffff;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 20px;
             font-size: 0.9rem;
             font-weight: 700;
-            border-radius: 3px;
+            border-radius: 4px;
             text-align: center;
-            display: inline-block;
+            display: block;
             transition: background-color 0.2s;
         }
 
@@ -296,50 +288,31 @@
             background-color: var(--primary-hover);
         }
 
-        /* Botones de navegación de flechas */
-        .carousel-nav-btn {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-            border: none;
-            font-size: 1.5rem;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            cursor: pointer;
-            position: absolute;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
+        .card-btn.disabled {
+            background-color: #cbd5e0;
+            color: #718096;
+            cursor: not-allowed;
         }
-
-        .carousel-nav-btn:hover {
-            background-color: var(--primary-accent);
-        }
-
-        .btn-left { left: -60px; }
-        .btn-right { right: -60px; }
 
         /* SECCIÓN SOBRE NOSOTROS */
         .about-section {
             max-width: 900px;
             margin: 0 auto;
-            padding: 90px 20px;
+            padding: 100px 20px;
             text-align: center;
             box-sizing: border-box;
             min-height: 500px; 
-            scroll-margin-top: 65px; /* Clava el inicio de la franja en el menú */
+            scroll-margin-top: 65px;
         }
 
         .about-section h2 {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: var(--text-dark);
             margin: 0 0 25px 0;
         }
 
         .about-section p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
             line-height: 1.8;
             margin: 0;
@@ -349,12 +322,12 @@
         .contact-section {
             background-color: var(--bg-white);
             border-top: 1px solid var(--border-color);
-            padding: 80px 80px;
+            padding: 90px 80px;
             display: flex;
             gap: 50px;
             box-sizing: border-box;
             min-height: 600px;
-            scroll-margin-top: 65px; /* Clava el inicio del formulario en el menú */
+            scroll-margin-top: 65px;
         }
 
         .contact-info {
@@ -363,7 +336,7 @@
         }
 
         .contact-info h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin: 0 0 20px 0;
         }
 
@@ -379,7 +352,7 @@
         }
 
         .contact-details p {
-            margin: 10px 0;
+            margin: 12px 0;
             color: var(--text-dark);
         }
 
@@ -407,7 +380,7 @@
         }
 
         .contact-form input, .contact-form textarea {
-            padding: 12px 15px;
+            padding: 14px 15px;
             border: 1px solid var(--border-color);
             border-radius: 4px;
             font-size: 0.95rem;
@@ -417,7 +390,7 @@
 
         .contact-form textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 130px;
         }
 
         .contact-form input:focus, .contact-form textarea:focus {
@@ -431,7 +404,7 @@
             background-color: var(--primary-accent);
             color: #ffffff;
             border: none;
-            padding: 14px;
+            padding: 15px;
             font-size: 1rem;
             font-weight: 700;
             border-radius: 4px;
@@ -441,6 +414,181 @@
 
         .submit-btn:hover {
             background-color: var(--primary-hover);
+        }
+        /* ==========================================
+           VISTA DINÁMICA: DETALLES DE BUNKER EPP
+           ========================================== */
+        #details-view {
+            display: none;
+            margin-top: 65px;
+            background-color: #ffffff;
+            padding: 40px 80px;
+            box-sizing: border-box;
+        }
+
+        .back-nav-container {
+            max-width: 1200px;
+            margin: 0 auto 30px auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            background: none;
+            border: none;
+            color: #4a5568;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 0;
+            transition: color 0.2s;
+            letter-spacing: 0.5px;
+        }
+
+        .back-btn:hover {
+            color: var(--primary-accent);
+        }
+
+        .app-landing-header {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 40px;
+        }
+
+        .app-icon-box {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .app-icon-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-header-info {
+            flex-grow: 1;
+        }
+
+        .app-header-info h2 {
+            font-size: 2.2rem;
+            margin: 0 0 5px 0;
+            color: #2d3748;
+        }
+
+        .app-header-info .developer-tag {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin: 0 0 20px 0;
+        }
+
+        .download-now-btn {
+            display: inline-block;
+            background-color: var(--btn-blue);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 35px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+        }
+
+        .download-now-btn:hover {
+            background-color: var(--btn-blue-hover);
+            transform: translateY(-1px);
+        }
+
+        .screenshots-section {
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+        }
+
+        .screenshots-section h4 {
+            font-size: 1.1rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 20px 0;
+        }
+
+        .screenshots-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 15px;
+        }
+
+        .screenshot-item {
+            min-width: 240px;
+            max-width: 240px;
+            height: 480px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-description-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #2d3748;
+        }
+
+        .app-description-content h3 {
+            font-size: 1.4rem;
+            border-left: 4px solid var(--btn-blue);
+            padding-left: 12px;
+            margin: 40px 0 20px 0;
+            color: #1a202c;
+        }
+
+        .app-description-content p {
+            font-size: 1.05rem;
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        .app-description-content ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .app-description-content li {
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .alert-box {
+            background-color: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
+
+        .alert-box h5 {
+            margin: 0 0 10px 0;
+            color: #dd6b20;
+            font-size: 1.1rem;
         }
 
         footer {
@@ -452,197 +600,231 @@
             margin-top: auto;
         }
 
-                /* RESPONSIVO OPTIMIZADO PARA MÓVILES */
-         @media (max-width: 990px) {
-            /* Cambia la barra a dos filas para que todo tenga espacio */
-            nav { 
-                padding: 12px 20px; 
-                flex-direction: column; 
-                gap: 12px;
-                align-items: center;
-                text-align: center;
-            }
+        /* MEDIA QUERIES RESPONSIVAS MÓVIL */
+        @media (max-width: 990px) {
+            nav { padding: 12px 20px; flex-direction: column; gap: 12px; text-align: center; }
+            .nav-links { gap: 15px; width: 100%; justify-content: center; flex-wrap: wrap; }
+            .nav-links a { font-size: 0.85rem; }
             
-            /* Reduce ligeramente el tamaño del logo en móviles */
-            .nav-logo {
-                font-size: 1.15rem;
-            }
-
-            /* Distribuye los enlaces de manera uniforme y reduce el espacio entre ellos */
-            .nav-links { 
-                gap: 15px; 
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap; /* Si la pantalla es ultra pequeña, baja los links ordenadamente */
-            }
-
-            .nav-links a {
-                font-size: 0.85rem; /* Letra un poco más compacta y cómoda para el dedo */
-            }
-
-            /* Reajuste del margen superior de la página para que el menú de dos filas no tape el contenido */
-            .hero-section { 
-                flex-direction: column; 
-                padding: 60px 20px 40px 20px; 
-                text-align: center; 
-                margin-top: 110px; /* Compensación por el nuevo alto del menú */
-            }
+            .hero-section { padding: 60px 20px 40px 20px; margin-top: 110px; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-text p { font-size: 1.05rem; }
             
-            /* Corrección de márgenes de anclaje para móviles */
-            .hero-section, .carousel-section, .about-section, .contact-section {
-                scroll-margin-top: 110px;
-            }
-
             .carousel-section { padding: 60px 20px; }
-            .btn-left, .btn-right { display: none; } 
             .contact-section { flex-direction: column; padding: 40px 20px; }
             .contact-form { grid-template-columns: 1fr; }
             .form-group.full-width { grid-column: span 1; }
             .submit-btn { grid-column: span 1; }
-        }
 
+            #details-view { padding: 30px 20px; margin-top: 110px; }
+            .app-landing-header { flex-direction: column; text-align: center; }
+        }
     </style>
 </head>
-
-<!-- ==========================================
-     PARTE 2: CUERPO DE CONTENIDO (HTML)
-     ========================================== -->
 <body>
 
-    <!-- MENÚ SUPERIOR CON ENLACES DE ANCLA -->
     <nav>
         <div class="nav-logo">ByteCore<span>Lab</span></div>
         <div class="nav-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#descargas">Descargas</a>
-            <a href="#nosotros">Sobre Nosotros</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#inicio" onclick="showMainStore()">Inicio</a>
+            <a href="#descargas" onclick="showMainStore()">Descargas</a>
+            <a href="#nosotros" onclick="showMainStore()">Sobre Nosotros</a>
+            <a href="#contacto" onclick="showMainStore()">Contacto</a>
         </div>
     </nav>
 
-    <!-- SECCIÓN DE BIENVENIDA -->
-       <section id="inicio" class="hero-section">
-        <!-- Contenedor de la Imagen de Fondo Local -->
-        <div class="hero-image">
-            <img src="imagenes/img.chispahorro1.jpg" alt="Showcase Tecnológico">
-        </div>
-        
-        <!-- Bloque de Texto alineado a la izquierda -->
-        <div class="hero-text">
-            <h1>Soluciones De Desarrollos Digital</h1>
-            <p>Transformamos la complejidad técnica en eficiencia operativa. Creamos software robusto e infraestructura a la medida diseñados para automatizar tus operaciones, asegurar tu gestión financiera y acelerar la transformación digital de tu organización.</p>
-            <a href="#descargas" class="hero-btn">Descargas</a>
-        </div>
-    </section>
+    <!-- ENTORNO CONTENEDOR VISTA PRINCIPAL -->
+    <div id="main-store-view">
 
+        <section id="inicio" class="hero-section">
+            <div class="hero-image">
+                <img src="imagenes/img.chispahorro1.jpg" alt="Showcase Tecnológico">
+            </div>
+            <div class="hero-text">
+                <h1>Soluciones De Desarrollos Digital</h1>
+                <p>Transformamos la complejidad técnica en eficiencia operativa. Creamos software robusto e infraestructura a la medida diseñados para automatizar tus operaciones, asegurar tu gestión financiera y acelerar la transformación digital de tu organización.</p>
+                <a href="#descargas" class="hero-btn">Descargas</a>
+            </div>
+        </section>
 
-    <!-- SECCIÓN DE DESCARGAS (CARRUSEL HORIZONTAL) -->
-    <section id="descargas" class="carousel-section">
-        <h2>Software / Aplicaciones</h2>
-        
-        <div class="carousel-wrapper">
-            <!-- Botón Desplazamiento Izquierdo -->
-            <button class="carousel-nav-btn btn-left" onclick="scrollCarousel(-350)">&#10094;</button>
+        <section id="descargas" class="carousel-section">
+            <h2>Herramientas y Aplicaciones</h2>
             
-           <div class="carousel-container" id="softwareCarousel">
+            <div class="categories-grid">
                 
-                <!-- TARJETA 1: CHISPAHORRO INTELIGENTE (Diseño Nuevo) -->
+                <!-- CATEGORÍA 1: ANDROID (ACTIVA CON DETALLES) -->
                 <div class="card">
-                    <!-- Foto Superior de la Tarjeta -->
                     <div class="card-image-top">
-                        <!-- Reemplaza "https://placeholder.com" por tu imagen local cuando la tengas (ej: imagenes/captura.jpg) -->
-                        <img src="imagenes/img.chispahorro.apk1.png">
+                        <img src="imagenes/img.chispahorro.apk1.png" alt="Bunker EPP Android">
                     </div>
-                    
-                    <!-- Cuerpo Informativo Inferior -->
                     <div class="card-body">
-                        <h3>Chispahorro Inteligente</h3>
-                        <p>Gestor financiero del hogar y alacena inteligente. Planifica compras con precios en cero, monitorea presupuestos en tiempo real mediante alertas y exporta auditorías en formato PDF.</p>
-                        <a href="app/chispahorro.apk" download="Chispahorro_Inteligente.apk" class="card-btn">Descargar APK</a>
+                        <h3>Móvil Android (Bunker EPP)</h3>
+                        <p>Solución móvil definitiva para constructores y contratistas. Diseñada específicamente para el trabajo rudo de campo. Control 100% offline.</p>
+                        <button type="button" onclick="showAppDetails()" class="card-btn" style="width:100%; border:none; cursor:pointer; font-family:inherit;">Ver Detalles</button>
                     </div>
                 </div>
 
-                <!-- TARJETA 2: Marcador para futura expansión 
-                <div class="card">
-                    <div>
-                        <h3>Solución Futura 1</h3>
-                        <p>Espacio reservado para tu próximo lanzamiento de software móvil o herramienta industrial SaaS. Configuración rápida.</p>
+                <!-- CATEGORÍA 2: IOS (EN CONSTRUCCIÓN) -->
+                <div class="card under-construction">
+                    <div class="card-image-top">
+                        <span class="construction-overlay">Próximamente</span>
+                        <img src="imagenes/img.chispahorro.apk1.png" alt="iOS App" style="filter: grayscale(100%);">
                     </div>
-                    <a href="#" class="card-btn">Próximamente</a>
-                </div> -->
-
-                <!-- TARJETA 3: Marcador para futura expansión 
-                <div class="card">
-                    <div>
-                        <h3>Solución Futura 2</h3>
-                        <p>Espacio reservado para tu próximo lanzamiento de software móvil o herramienta industrial SaaS. Configuración rápida.</p>
+                    <div class="card-body">
+                        <h3>Móvil iOS (Apple)</h3>
+                        <p>Estamos adaptando nuestros algoritmos de rendimiento nativo para el ecosistema de Apple. Próximamente disponible en la App Store.</p>
+                        <a href="#" class="card-btn disabled">En Construcción</a>
                     </div>
-                    <a href="#" class="card-btn">Próximamente</a>
-                </div>-->
+                </div>
 
+                <!-- CATEGORÍA 3: WINDOWS DESKTOP (EN CONSTRUCCIÓN) -->
+                <div class="card under-construction">
+                    <div class="card-image-top">
+                        <span class="construction-overlay">En Desarrollo</span>
+                        <img src="imagenes/img.chispahorro.apk1.png" alt="Windows Desktop" style="filter: grayscale(100%);">
+                    </div>
+                    <div class="card-body">
+                        <h3>Escritorio Windows</h3>
+                        <p>Herramientas SaaS industriales de alta velocidad para administración a gran escala desde sistemas operativos de escritorio.</p>
+                        <a href="#" class="card-btn disabled">En Construcción</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="nosotros" class="about-section">
+            <h2>Sobre Nosotros</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </section>
+
+        <section id="contacto" class="contact-section">
+            <div class="contact-info">
+                <h2>Contactos</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nos pondremos en contacto contigo lo antes posible para evaluar tus requerimientos y proyectos.</p>
+                <div class="contact-details">
+                    <p><strong>Email:</strong> info@yourblog.com</p>
+                    <p><strong>Teléfono:</strong> 123-456-789</p>
+                </div>
             </div>
             
-            <!-- Botón Desplazamiento Derecho -->
-            <button class="carousel-nav-btn btn-right" onclick="scrollCarousel(350)">&#10095;</button>
-        </div>
-    </section>
-
-    <!-- SECCIÓN SOBRE NOSOTROS -->
-    <section id="nosotros" class="about-section">
-        <h2>Sobre Nosotros</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    </section>
-
-    <!-- SECCIÓN DE CONTACTO -->
-    <section id="contacto" class="contact-section">
-        <div class="contact-info">
-            <h2>Contactos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nos pondremos en contacto contigo lo antes posible para evaluar tus requerimientos y proyectos.</p>
-            <div class="contact-details">
-                <p><strong>Email:</strong> info@yourblog.com</p>
-                <p><strong>Teléfono:</strong> 123-456-789</p>
+            <div class="contact-form-container">
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="mobile" placeholder="Teléfono/Móvil">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="address" placeholder="Dirección">
+                    </div>
+                    <div class="form-group full-width">
+                        <textarea name="message" placeholder="Tu Mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send</button>
+                </form>
             </div>
-        </div>
-        
-        <div class="contact-form-container">
-            <form class="contact-form" action="#" method="POST">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Nombre" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" name="mobile" placeholder="Teléfono/Móvil">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="address" placeholder="Dirección">
-                </div>
-                <div class="form-group full-width">
-                    <textarea name="message" placeholder="Tu Mensaje" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send</button>
-            </form>
-        </div>
-    </section>
+        </section>
 
-    <!-- PIE DE PÁGINA -->
+    </div> <!-- FIN DE LA VISTA PRINCIPAL -->
+    <!-- ENTORNO CONTENEDOR VISTA DETALLES (Oculto al inicio) -->
+    <div id="details-view">
+
+        <div class="back-nav-container">
+            <button class="back-btn" onclick="showMainStore('descargas')">← VOLVER AL REPOSITORIO</button>
+        </div>
+
+        <header class="app-landing-header">
+            <div class="app-icon-box">
+                <img src="imagenes/img.chispahorro.apk1.png" alt="Bunker EPP Logo">
+            </div>
+            <div class="app-header-info">
+                <h2>BUNKER EPP V1.7</h2>
+                <p class="developer-tag">Desarrollador Verificado • Ejecutable Nativo Android</p>
+                <a href="app/chispahorro.apk" download="Bunker_EPP_v1.7.apk" class="download-now-btn">Download Now</a>
+            </div>
+        </header>
+
+        <section class="screenshots-section">
+            <h4>Capturas de pantalla en entorno real</h4>
+            <div class="screenshots-container">
+                <div class="screenshot-item"><img src="imagenes/img.chispahorro.apk1.png" alt="Captura 1"></div>
+                <div class="screenshot-item"><img src="imagenes/img.chispahorro.apk1.png" alt="Captura 2"></div>
+                <div class="screenshot-item"><img src="imagenes/img.chispahorro.apk1.png" alt="Captura 3"></div>
+                <div class="screenshot-item"><img src="imagenes/img.chispahorro.apk1.png" alt="Captura 4"></div>
+            </div>
+        </section>
+
+        <article class="app-description-content">
+            <h3>Descripción Operativa Completa</h3>
+            <p><strong>DIGITALIZA TU OBRA CON BUNKER EPP 🛡️🦺</strong></p>
+            <p>¿Sigues firmando la entrega de EPP en hojas de papel que terminan manchadas, rotas o perdidas? Cuando llega una auditoría de la STPS o el IMSS, el papel no te va a salvar. Llegó la hora de tomar el control definitivo con Bunker EPP, la solución móvil creada para el trabajo rudo de campo. Cumple con la NOM-017 de la STPS directamente desde tu celular de forma automatizada.</p>
+
+            <h3>🎁 Lo que llevas GRATIS (Versión Free)</h3>
+            <ul>
+                <li>📊 <strong>Control 100% Offline:</strong> Registra datos en sótanos, excavaciones o zonas sin señal. Todo se guarda seguro en tu teléfono.</li>
+                <li>✍️ <strong>Firmas Digitales de Conformidad:</strong> Captura la firma del trabajador directamente en la pantalla. Respaldo legal inmediato ante multas.</li>
+                <li>📉 <strong>Auditoría de Costos:</strong> Desglosa e identifica el gasto de insumos por cada frente de trabajo y subcontratista.</li>
+                <li>📲 <strong>Reportes Rápidos:</strong> Exporta y comparte las evidencias del día en formato de imagen por WhatsApp o correo electrónico.</li>
+            </ul>
+
+            <h3>🚀 ¿Quieres poder restrictivo? Pasa al PLAN PREMIUM</h3>
+            <ul>
+                <li>☁️ <strong>Respaldo en la Nube Bajo tu Control:</strong> Tú eliges el momento exacto para sincronizar el lote de evidencias de forma masiva sin gastar tus datos en la obra.</li>
+                <li>🗂️ <strong>Descarga Masiva del SUA:</strong> Olvídate de registrar trabajadores a mano. Importa el padrón completo del Sistema Único de Autodeterminación desde la computadora en un solo clic.</li>
+                <li>📄 <strong>Generador Avanzado de PDF:</strong> Crea bitácoras oficiales y hojas de control en formato PDF en segundos, listas para enviar a gerencia o dependencias gubernamentales.</li>
+                <li>💸 El EPP que no se registra es dinero que regalas. Protege a tu empresa ante costosas multas laborales, reduce tiempos de administración en campo y mantén tus costos bajo un estricto control.</li>
+            </ul>
+
+            <div class="alert-box">
+                <h5>⚠️ NOTA IMPORTANTE DE INSTALACIÓN (Para teléfonos Android)</h5>
+                <p>Al ser un software industrial de distribución directa (fuera de Play Store), cuando abras el archivo en tu celular el sistema operativo te mostrará una alerta de seguridad de <em>"Aplicación Desconocida"</em>. No te preocupes, el archivo está 100% verificado por nuestro equipo y libre de riesgos. Sigue estos 3 pasos rápidos para instalarlo:</p>
+                <ol style="margin-left: 20px; font-size: 0.95rem;">
+                    <li>Presiona el archivo descargado. Si aparece el bloqueo, dale clic en <strong>Configuración o Ajustes</strong>.</li>
+                    <li>Activa el interruptor que dice <strong>Permitir desde esta fuente</strong> o <em>Autorizar aplicaciones desconocidas</em>.</li>
+                    <li>Regresa a tu pantalla y dale clic en <strong>Instalar</strong>. ¡Listo! Ya puedes usar BUNKER EPP 100% Offline.</li>
+                </ol>
+                <p style="margin-top: 15px; font-weight: 700; color: #dd6b20;">¡Descárgala hoy mismo y toma el control total de tu seguridad industrial!</p>
+            </div>
+        </article>
+
+    </div> <!-- FIN DE LA VISTA DE DETALLES -->
+
     <footer>
         Your Blog Company S.L. All rights reserved. © 2026
     </footer>
 
-    <!-- ==========================================
-         PARTE 3: LÓGICA DE INTERACCIÓN (JAVASCRIPT)
-         ========================================== -->
+    <!-- INTERRUPTOR DINÁMICO DE PANTALLAS (SPA ENGINE) -->
     <script>
-        function scrollCarousel(scrollOffset) {
-            const container = document.getElementById('softwareCarousel');
-            container.scrollBy({
-                left: scrollOffset,
-                behavior: 'smooth'
-            });
+        function appDetailsView() {
+            document.getElementById('main-store-view').style.display = 'none';
+            document.getElementById('details-view').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function mainRepositoryView(targetSectionId) {
+            document.getElementById('details-view').style.display = 'none';
+            document.getElementById('main-store-view').style.display = 'block';
+            
+            if (targetSectionId) {
+                setTimeout(function() {
+                    const element = document.getElementById(targetSectionId);
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                }, 50);
+            }
+        }
+
+        function showAppDetails() {
+            appDetailsView();
+        }
+
+        function showMainStore(targetId) {
+            mainRepositoryView(targetId);
         }
     </script>
-
 </body>
 </html>
