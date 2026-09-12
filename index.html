@@ -85,7 +85,7 @@
         .hero-section {
             margin-top: 65px;
             position: relative;
-            min-height: 95vh; /* Controla la altura del banner superior */
+            min-height: 90vh; /* Controla la altura del banner superior */
             display: flex;
             align-items: center;
             padding: 0 80px;
@@ -154,14 +154,18 @@
 
         /* SECCIÓN CARRUSEL (Tarjetas de Descargas) */
         .carousel-section {
-            background-color: var(--bg-dark-banner);
-            padding: 60px 80px;
+            background-image: linear-gradient(rgba(59, 54, 52, 0.85), rgba(59, 54, 52, 0.85)), url('imagenes/img.chispahorro2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Da un efecto de movimiento elegante al bajar la página */
+            padding: 120px 80px; /* Hace la franja más ancha verticalmente */
             color: #ffffff;
             position: relative;
             text-align: center;
-            min-height: 600px; /* Le da una altura adecuada de pantalla */
-            scroll-margin-top: 65px; /* Evita que la barra tape el título "Best Features" */
+            min-height: 600px; 
+            scroll-margin-top: 65px; 
         }
+
 
         .carousel-section h2 {
             font-size: 2rem;
@@ -219,7 +223,7 @@
         /* Contenedor y ajuste de la foto de la tarjeta */
         .card-image-top {
             width: 100%;
-            height: 180px; /* Altura fija para la miniatura de la app */
+            height: 260px; /* Aumentamos la altura de 180px a 260px para revelar más interfaz */
             overflow: hidden;
             background-color: #eaecef;
         }
