@@ -85,12 +85,13 @@
         .hero-section {
             margin-top: 65px;
             position: relative;
-            min-height: 550px; /* Controla la altura del banner superior */
+            min-height: 80vh; /* Controla la altura del banner superior */
             display: flex;
             align-items: center;
             padding: 0 80px;
             box-sizing: border-box;
             overflow: hidden;
+            scroll-margin-top: 65px; /* Hace que se clave perfecto en la franja */
         }
 
         /* Capa oscura semitransparente sobre la foto para que el texto sea legible */
@@ -135,7 +136,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 150%;
+            height: 100%;
             z-index: 1;
         }
 
@@ -144,7 +145,7 @@
            top: 0;             /* Agrega esta línea */
            left: 0;            /* Agrega esta línea */
            width: 100%;
-           height: 150%;
+           height: 100%;
            object-fit: cover; /* Recorta los bordes inteligentemente para no distorsionar */
            object-position: center;
         }
@@ -158,6 +159,8 @@
             color: #ffffff;
             position: relative;
             text-align: center;
+            min-height: 600px; /* Le da una altura adecuada de pantalla */
+            scroll-margin-top: 65px; /* Evita que la barra tape el título "Best Features" */
         }
 
         .carousel-section h2 {
@@ -276,6 +279,8 @@
             padding: 90px 20px;
             text-align: center;
             box-sizing: border-box;
+            min-height: 500px; 
+            scroll-margin-top: 65px; /* Clava el inicio de la franja en el menú */
         }
 
         .about-section h2 {
@@ -299,6 +304,8 @@
             display: flex;
             gap: 50px;
             box-sizing: border-box;
+            min-height: 600px;
+            scroll-margin-top: 65px; /* Clava el inicio del formulario en el menú */
         }
 
         .contact-info {
