@@ -432,17 +432,55 @@
             margin-top: auto;
         }
 
-        /* RESPONSIVO */
-        @media (max-width: 990px) {
-            nav { padding: 15px 30px; }
-            .hero-section { flex-direction: column; padding: 40px 30px; text-align: center; }
-            .carousel-section { padding: 40px 40px; }
-            .btn-left, .btn-right { display: none; } /* Navegación táctil nativa en móvil */
-            .contact-section { flex-direction: column; padding: 40px 30px; }
+                /* RESPONSIVO OPTIMIZADO PARA MÓVILES */
+         @media (max-width: 990px) {
+            /* Cambia la barra a dos filas para que todo tenga espacio */
+            nav { 
+                padding: 12px 20px; 
+                flex-direction: column; 
+                gap: 12px;
+                align-items: center;
+                text-align: center;
+            }
+            
+            /* Reduce ligeramente el tamaño del logo en móviles */
+            .nav-logo {
+                font-size: 1.15rem;
+            }
+
+            /* Distribuye los enlaces de manera uniforme y reduce el espacio entre ellos */
+            .nav-links { 
+                gap: 15px; 
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap; /* Si la pantalla es ultra pequeña, baja los links ordenadamente */
+            }
+
+            .nav-links a {
+                font-size: 0.85rem; /* Letra un poco más compacta y cómoda para el dedo */
+            }
+
+            /* Reajuste del margen superior de la página para que el menú de dos filas no tape el contenido */
+            .hero-section { 
+                flex-direction: column; 
+                padding: 60px 20px 40px 20px; 
+                text-align: center; 
+                margin-top: 110px; /* Compensación por el nuevo alto del menú */
+            }
+            
+            /* Corrección de márgenes de anclaje para móviles */
+            .hero-section, .carousel-section, .about-section, .contact-section {
+                scroll-margin-top: 110px;
+            }
+
+            .carousel-section { padding: 60px 20px; }
+            .btn-left, .btn-right { display: none; } 
+            .contact-section { flex-direction: column; padding: 40px 20px; }
             .contact-form { grid-template-columns: 1fr; }
             .form-group.full-width { grid-column: span 1; }
             .submit-btn { grid-column: span 1; }
         }
+
     </style>
 </head>
 
@@ -479,7 +517,7 @@
 
     <!-- SECCIÓN DE DESCARGAS (CARRUSEL HORIZONTAL) -->
     <section id="descargas" class="carousel-section">
-        <h2>Aplicaciones Y Software</h2>
+        <h2>Aplicaciones / Software</h2>
         
         <div class="carousel-wrapper">
             <!-- Botón Desplazamiento Izquierdo -->
