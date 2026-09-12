@@ -130,6 +130,26 @@
             text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
 
+        .hero-btn {
+            display: inline-block;
+            margin-top: 25px; /* Separa el botón del párrafo */
+            background-color: var(--primary-accent); /* Tu naranja corporativo */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(224, 94, 43, 0.3);
+        }
+
+        .hero-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px); /* Pequeño efecto flotante al pasar el mouse */
+        }
+
+
         /* La imagen ahora se estira por completo detrás sin deformarse */
         .hero-image {
             position: absolute;
@@ -511,13 +531,14 @@
         <div class="hero-text">
             <h1>Soluciones De Desarrollos Digital</h1>
             <p>Transformamos la complejidad técnica en eficiencia operativa. Creamos software robusto e infraestructura a la medida diseñados para automatizar tus operaciones, asegurar tu gestión financiera y acelerar la transformación digital de tu organización.</p>
+            <a href="#descargas" class="hero-btn">Descargas</a>
         </div>
     </section>
 
 
     <!-- SECCIÓN DE DESCARGAS (CARRUSEL HORIZONTAL) -->
     <section id="descargas" class="carousel-section">
-        <h2>Aplicaciones / Software</h2>
+        <h2>Software / Aplicaciones</h2>
         
         <div class="carousel-wrapper">
             <!-- Botón Desplazamiento Izquierdo -->
@@ -530,7 +551,7 @@
                     <!-- Foto Superior de la Tarjeta -->
                     <div class="card-image-top">
                         <!-- Reemplaza "https://placeholder.com" por tu imagen local cuando la tengas (ej: imagenes/captura.jpg) -->
-                        <img src="imagenes/img.chispahorro.apk1.jpeg">
+                        <img src="imagenes/img.chispahorro.apk1.png">
                     </div>
                     
                     <!-- Cuerpo Informativo Inferior -->
