@@ -140,11 +140,15 @@
         }
 
         .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Recorta los bordes inteligentemente para no distorsionar */
-            object-position: center;
+           position: absolute; /* Agrega esta línea */
+           top: 0;             /* Agrega esta línea */
+           left: 0;            /* Agrega esta línea */
+           width: 100%;
+           height: 100%;
+           object-fit: cover; /* Recorta los bordes inteligentemente para no distorsionar */
+           object-position: center;
         }
+
 
 
         /* SECCIÓN CARRUSEL (Tarjetas de Descargas) */
@@ -453,23 +457,23 @@
                     <a href="app/chispahorro.apk" download="Chispahorro_Inteligente.apk" class="card-btn">Descargar APK</a>
                 </div>
 
-                <!-- TARJETA 2: Marcador para futura expansión -->
+                <!-- TARJETA 2: Marcador para futura expansión 
                 <div class="card">
                     <div>
                         <h3>Solución Futura 1</h3>
                         <p>Espacio reservado para tu próximo lanzamiento de software móvil o herramienta industrial SaaS. Configuración rápida.</p>
                     </div>
                     <a href="#" class="card-btn">Próximamente</a>
-                </div>
+                </div> -->
 
-                <!-- TARJETA 3: Marcador para futura expansión -->
+                <!-- TARJETA 3: Marcador para futura expansión 
                 <div class="card">
                     <div>
                         <h3>Solución Futura 2</h3>
                         <p>Espacio reservado para tu próximo lanzamiento de software móvil o herramienta industrial SaaS. Configuración rápida.</p>
                     </div>
                     <a href="#" class="card-btn">Próximamente</a>
-                </div>
+                </div>-->
 
             </div>
             
