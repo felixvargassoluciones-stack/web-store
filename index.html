@@ -693,6 +693,7 @@
             padding-left: 12px;
             margin: 40px 0 20px 0;
             color: #1a202c;
+            font-weight: 700;
         }
 
         .app-description-content p {
@@ -745,10 +746,20 @@
             .hero-text p { font-size: 1.05rem; }
             
             .carousel-section { padding: 60px 20px; }
-            .contact-section { flex-direction: column; padding: 40px 20px; }
-            .contact-form { grid-template-columns: 1fr; }
-            .form-group.full-width { grid-column: span 1; }
-            .submit-btn { grid-column: span 1; }
+            .about-section, .contact-section { 
+                min-height: auto; 
+                padding: 60px 20px; 
+            }
+            .about-grid, .contact-grid { 
+                grid-template-columns: 1fr; 
+                gap: 40px; 
+            }
+            .about-profile-img { 
+                height: 280px; 
+            }
+            .b2b-clean-form {
+                padding: 25px;
+            }
 
             #details-view { padding: 30px 20px; margin-top: 110px; }
             .app-landing-header { flex-direction: column; text-align: center; }
@@ -827,19 +838,16 @@
             </div>
         </section>
 
-              <!-- ========================================== -->
-        <!-- SECCIÓN SOBRE NOSOTROS (REEMPLAZO)         -->
-        <!-- ========================================== -->
         <section id="nosotros" class="about-section">
             <div class="about-grid">
                 <!-- Bloque Izquierdo: Texto Corporativo B2B -->
                 <div class="about-text-content">
                     <h2>QUIÉNES SOMOS</h2>
                     <p class="corporate-manifesto">
-                        <strong>ByteCore Labs</strong> es un equipo de desarrollo de software enfocada en centralizar, optimizar y facilitar el acceso a soluciones digitales robustas y de alto rendimiento. Diseñada bajo estándares industriales, esta plataforma garantiza descargas directas, inmediatas y seguras de ejecutables nativos, eliminando intermediarios y maximizando la eficiencia operativa en campo.
+                        <strong>ByteCore Labs</strong> es un equipo de desarrollo de software enfocado en centralizar, optimizar y facilitar el acceso a soluciones digitales robustas y de alto rendimiento. Diseñada bajo estándares industriales, esta plataforma garantiza descargas directas, inmediatas y seguras de ejecutables nativos, eliminando intermediarios y maximizando la eficiencia operativa en campo.
                     </p>
                     <p class="corporate-manifesto">
-                        Nuestra filosofía de ingeniería combina el poder de la Inteligencia Artificial para acelerar el despliegue de código libre de errores, junto con un enfoque <strong>Offline-First</strong>, asegurando que nuestras herramientas  funcionen con total resiliencia en cualquier entorno de trabajo.
+                        Nuestra filosofía de ingeniería combina el poder de la Inteligencia Artificial para acelerar el despliegue de código libre de errores, junto con un enfoque <strong>Offline-First</strong>, asegurando que nuestras herramientas funcionen con total resiliencia en cualquier entorno de trabajo.
                     </p>
                     <div class="signature-block">
                         <span class="engineer-name">Ing. Felix Vargas</span>
@@ -854,12 +862,6 @@
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- SECCIÓN CONTACTO (REEMPLAZO)               -->
-        <!-- ========================================== -->
-                <!-- ========================================== -->
-        <!-- SECCIÓN CONTACTO (OPTIMIZADA)              -->
-        <!-- ========================================== -->
         <section id="contacto" class="contact-section">
             <div class="contact-grid">
                 <!-- Columna Izquierda: Canales de Atención Rápida -->
@@ -869,7 +871,7 @@
                     
                     <div class="info-cards-stack">
                         <!-- Enlace a Gmail Funcional -->
-                        <a href="mailto:felixvargassoluciones@://gmail.com" class="contact-card-link" title="Abrir correo electrónico corporativo">
+                        <a href="mailto:felixvargassoluciones@gmail.com?subject=Consulta%20B2B%20-%20ByteCore%20Labs" class="contact-card-link" title="Abrir correo electrónico corporativo">
                             <div class="card-icon">✉️</div>
                             <div class="card-details">
                                 <span class="card-label">Correo Oficial</span>
@@ -877,8 +879,8 @@
                             </div>
                         </a>
 
-                        <!-- Enlace a WhatsApp 100% Codificado para evitar errores 4xx -->
-                        <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="contact-card-link" title="Abrir chat de WhatsApp corporativo">
+                        <!-- Enlace a WhatsApp Técnico de Alta Compatibilidad (Abre app en celular directamente) -->
+                        <a href="https://api.whatsapp.com/send?phone=527201494833&text=Hola%20Ing.%20Felix%20me%20interesa%20una%20solucion%20de%20ByteCore%20Labs" target="_blank" rel="noopener noreferrer" class="contact-card-link" title="Abrir chat de WhatsApp corporativo">
                             <div class="card-icon">💬</div>
                             <div class="card-details">
                                 <span class="card-label">WhatsApp Corporativo</span>
@@ -890,13 +892,13 @@
 
                 <!-- Columna Derecha: Formulario de Captación -->
                 <div class="contact-form-holder">
-                    <form action="https://formsubmit.co" method="POST" class="b2b-clean-form">
+                    <form action="https://formsubmit.co/felixvargassoluciones@gmail.com" method="POST" class="b2b-clean-form">
                         <!-- Honeypot invisible para evitar el spam -->
                         <input type="text" name="_honey" style="display:none">
                         <!-- Estructura del correo final formateada como tabla limpia -->
                         <input type="hidden" name="_template" value="table">
                         <!-- Redirección automática de regreso a tu SPA de producción -->
-                        <input type="hidden" name="_next" value="https://github.io">
+                        <input type="hidden" name="_next" value="https://felixvargassoluciones-stack.github.io/">
 
                         <div class="form-group-b2b">
                             <label for="form-name">Nombre Completo / Empresa</label>
@@ -923,8 +925,6 @@
                 </div>
             </div>
         </section>
-
-
 
     </div> <!-- FIN DE LA VISTA PRINCIPAL -->
     <!-- ENTORNO CONTENEDOR VISTA DETALLES (Oculto al inicio) -->
@@ -991,7 +991,7 @@
     </div> <!-- FIN DE LA VISTA DE DETALLES -->
 
     <footer>
-        Your Blog Company S.L. All rights reserved. © 2026
+        ByteCore Labs. All rights reserved. © 2026
     </footer>
 
     <!-- INTERRUPTOR DINÁMICO DE PANTALLAS (SPA ENGINE) -->
