@@ -294,127 +294,261 @@
             cursor: not-allowed;
         }
 
-        /* SECCIÓN SOBRE NOSOTROS */
+               /* ==========================================
+           REEMPLAZO: SECCIÓN SOBRE NOSOTROS (CORREGIDO)
+           ========================================== */
         .about-section {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 100px 20px;
-            text-align: center;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 80px;
             box-sizing: border-box;
-            min-height: 500px; 
             scroll-margin-top: 65px;
+            background-color: var(--bg-white);
         }
 
-        .about-section h2 {
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+            width: 100%;
+        }
+
+        .about-text-content {
+            text-align: left;
+        }
+
+        .about-text-content h2 {
             font-size: 2.4rem;
             color: var(--text-dark);
             margin: 0 0 25px 0;
+            font-weight: 700;
         }
 
-        .about-section p {
-            font-size: 1.15rem;
+        .corporate-manifesto {
+            font-size: 1.05rem;
             color: var(--text-muted);
             line-height: 1.8;
-            margin: 0;
-        }
-
-        /* SECCIÓN CONTACTO */
-        .contact-section {
-            background-color: var(--bg-white);
-            border-top: 1px solid var(--border-color);
-            padding: 90px 80px;
-            display: flex;
-            gap: 50px;
-            box-sizing: border-box;
-            min-height: 600px;
-            scroll-margin-top: 65px;
-        }
-
-        .contact-info {
-            flex: 1;
-            max-width: 400px;
-        }
-
-        .contact-info h2 {
-            font-size: 2.2rem;
             margin: 0 0 20px 0;
+            text-align: justify;
         }
 
-        .contact-info p {
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin: 0 0 30px 0;
-        }
-
-        .contact-details {
-            margin-top: 30px;
-            font-size: 0.95rem;
-        }
-
-        .contact-details p {
-            margin: 12px 0;
-            color: var(--text-dark);
-        }
-
-        .contact-details strong {
-            color: var(--primary-accent);
-        }
-
-        .contact-form-container {
-            flex: 1.5;
-        }
-
-        .contact-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .form-group {
+        .signature-block {
+            margin-top: 35px;
             display: flex;
             flex-direction: column;
         }
 
-        .form-group.full-width {
-            grid-column: span 2;
+        .engineer-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-dark);
         }
 
-        .contact-form input, .contact-form textarea {
-            padding: 14px 15px;
+        .engineer-role {
+            font-size: 0.85rem;
+            color: var(--primary-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        .about-image-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .about-profile-img {
+            width: 100%;
+            max-width: 420px;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        /* ==========================================
+           REEMPLAZO: SECCIÓN CONTACTO (CORREGIDO)
+           ========================================== */
+        .contact-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            padding: 80px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            min-height: 90vh;
+            scroll-margin-top: 65px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+            width: 100%;
+        }
+
+        .contact-info-channels {
+            text-align: left;
+        }
+
+        .contact-info-channels h2 {
+            font-size: 2.4rem;
+            margin: 0 0 20px 0;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .contact-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0 0 35px 0;
+        }
+
+        .info-cards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-card-link {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 22px;
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .contact-card-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            border-color: var(--primary-accent);
+        }
+
+        .card-icon {
+            font-size: 1.6rem;
+        }
+
+        .card-details {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .card-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .card-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 2px;
+            word-break: break-all;
+        }
+
+        /* Formulario B2B */
+        .contact-form-holder {
+            width: 100%;
+        }
+
+        .b2b-clean-form {
+            background: var(--bg-white);
+            padding: 35px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group-b2b {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            text-align: left;
+        }
+
+        .form-group-b2b label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group-b2b input,
+        .form-group-b2b textarea {
+            padding: 14px;
+            font-size: 0.95rem;
             border: 1px solid var(--border-color);
             border-radius: 4px;
-            font-size: 0.95rem;
+            outline: none;
             font-family: inherit;
             background-color: var(--bg-light);
+            transition: all 0.2s;
         }
 
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 130px;
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            outline: none;
+        .form-group-b2b input:focus,
+        .form-group-b2b textarea:focus {
             border-color: var(--primary-accent);
-            background-color: #ffffff;
+            background-color: var(--bg-white);
         }
 
-        .submit-btn {
-            grid-column: span 2;
+        .btn-submit-form {
+            width: 100%;
+            padding: 16px;
             background-color: var(--primary-accent);
             color: #ffffff;
             border: none;
-            padding: 15px;
+            border-radius: 4px;
             font-size: 1rem;
             font-weight: 700;
-            border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.2s;
+            margin-top: 5px;
         }
 
-        .submit-btn:hover {
+        .btn-submit-form:hover {
             background-color: var(--primary-hover);
         }
+
+        /* Modificación a tu regla media query existente */
+        @media (max-width: 990px) {
+            .about-section, .contact-section { 
+                min-height: auto; 
+                padding: 60px 20px; 
+            }
+            .about-grid, .contact-grid { 
+                grid-template-columns: 1fr; 
+                gap: 40px; 
+            }
+            .about-profile-img { 
+                height: 280px; 
+            }
+            .b2b-clean-form {
+                padding: 25px;
+            }
+        }
+
         /* ==========================================
            VISTA DINÁMICA: DETALLES DE BUNKER EPP
            ========================================== */
@@ -693,42 +827,100 @@
             </div>
         </section>
 
+              <!-- ========================================== -->
+        <!-- SECCIÓN SOBRE NOSOTROS (REEMPLAZO)         -->
+        <!-- ========================================== -->
         <section id="nosotros" class="about-section">
-            <h2>Sobre Nosotros</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </section>
+            <div class="about-grid">
+                <!-- Bloque Izquierdo: Texto Corporativo B2B -->
+                <div class="about-text-content">
+                    <h2>QUIÉNES SOMOS</h2>
+                    <p class="corporate-manifesto">
+                        <strong>ByteCore Labs</strong> es una firma de desarrollo de software enfocada en centralizar, optimizar y facilitar el acceso a soluciones digitales robustas y de alto rendimiento. Diseñada bajo estándares industriales, esta plataforma garantiza descargas directas, inmediatas y seguras de ejecutables nativos, eliminando intermediarios y maximizando la eficiencia operativa en campo.
+                    </p>
+                    <p class="corporate-manifesto">
+                        Nuestra filosofía de ingeniería combina el poder de la Inteligencia Artificial para acelerar el despliegue de código libre de errores, junto con un enfoque <strong>Offline-First</strong>, asegurando que nuestras herramientas clave (como <em>Bunker EPP</em>) funcionen con total resiliencia en cualquier entorno de trabajo.
+                    </p>
+                    <div class="signature-block">
+                        <span class="engineer-name">Ing. Felix Vargas</span>
+                        <span class="engineer-role">Líder de Arquitectura de Software</span>
+                    </div>
+                </div>
 
-        <section id="contacto" class="contact-section">
-            <div class="contact-info">
-                <h2>Contactos</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nos pondremos en contacto contigo lo antes posible para evaluar tus requerimientos y proyectos.</p>
-                <div class="contact-details">
-                    <p><strong>Email:</strong> info@yourblog.com</p>
-                    <p><strong>Teléfono:</strong> 123-456-789</p>
+                <!-- Bloque Derecho: Tu Imagen Reemplazable -->
+                <div class="about-image-container">
+                    <img src="imagenes/img.chispahorro3.jpeg" alt="Ing. Felix Vargas - ByteCore Labs" class="about-profile-img">
                 </div>
             </div>
-            
-            <div class="contact-form-container">
-                <form class="contact-form" action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Nombre" required>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN CONTACTO (REEMPLAZO)               -->
+        <!-- ========================================== -->
+        <section id="contacto" class="contact-section">
+            <div class="contact-grid">
+                <!-- Columna Izquierda: Canales de Atención Rápida -->
+                <div class="contact-info-channels">
+                    <h2>CONTACTO</h2>
+                    <p class="contact-subtitle">¿Tienes un proyecto en mente? Hablemos de ingeniería de software.</p>
+                    
+                    <div class="info-cards-stack">
+                        <!-- Enlace a Gmail Funcional en Móvil y PC -->
+                        <a href="mailto:felixvargassoluciones@://gmail.com" class="contact-card-link" title="Abrir correo electrónico corporativo">
+                            <div class="card-icon">✉️</div>
+                            <div class="card-details">
+                                <span class="card-label">Correo Oficial</span>
+                                <span class="card-value">felixvargassoluciones@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <!-- Enlace a WhatsApp Funcional en Móvil y PC -->
+                        <a href="https://wa.me." target="_blank" rel="noopener noreferrer" class="contact-card-link" title="Abrir chat de WhatsApp corporativo">
+                            <div class="card-icon">💬</div>
+                            <div class="card-details">
+                                <span class="card-label">WhatsApp Corporativo</span>
+                                <span class="card-value">+52 720 149 4833</span>
+                            </div>
+                        </a>
                     </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" name="mobile" placeholder="Teléfono/Móvil">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="address" placeholder="Dirección">
-                    </div>
-                    <div class="form-group full-width">
-                        <textarea name="message" placeholder="Tu Mensaje" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send</button>
-                </form>
+                </div>
+
+                <!-- Columna Derecha: Formulario de Captación a través de FormSubmit -->
+                <div class="contact-form-holder">
+                    <form action="https://formsubmit.co" method="POST" class="b2b-clean-form">
+                        <!-- Honeypot invisible para evitar el spam -->
+                        <input type="text" name="_honey" style="display:none">
+                        <!-- Estructura del correo final formateada como tabla limpia -->
+                        <input type="hidden" name="_template" value="table">
+                        <!-- Redirección automática de regreso a tu SPA de producción -->
+                        <input type="hidden" name="_next" value="https://github.io">
+
+                        <div class="form-group-b2b">
+                            <label for="form-name">Nombre Completo / Empresa</label>
+                            <input type="text" id="form-name" name="Nombre" required placeholder="Ej. Constructora Alfa">
+                        </div>
+
+                        <div class="form-group-b2b">
+                            <label for="form-email">Correo Electrónico Corporativo</label>
+                            <input type="email" id="form-email" name="Email" required placeholder="ejemplo@empresa.com">
+                        </div>
+
+                        <div class="form-group-b2b">
+                            <label for="form-phone">Teléfono de Contacto</label>
+                            <input type="tel" id="form-phone" name="Telefono" required placeholder="Ej. +52 720 149 4833">
+                        </div>
+
+                        <div class="form-group-b2b">
+                            <label for="form-message">Mensaje / Requerimiento</label>
+                            <textarea id="form-message" name="Mensaje" rows="5" required placeholder="Describe las especificaciones técnicas o necesidades de tu proyecto..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit-form">Enviar Requerimiento</button>
+                    </form>
+                </div>
             </div>
         </section>
+
 
     </div> <!-- FIN DE LA VISTA PRINCIPAL -->
     <!-- ENTORNO CONTENEDOR VISTA DETALLES (Oculto al inicio) -->
