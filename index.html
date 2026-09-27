@@ -240,20 +240,16 @@
     <footer>
         ByteCore Labs. All rights reserved. © 2026
     </footer>
-            <script>
-                let baseDatosApps = [];
+        <script>
+        let baseDatosApps = [];
 
         // 1. Cargar archivo datos.json automáticamente al abrir la página
         async function cargarDatos() {
             try {
                 const respuesta = await fetch('datos.json');
                 baseDatosApps = await respuesta.json();
-                
-                // PRIMERO renderizamos las tarjetas para que existan en el navegador
-                renderizarTienda();
-                
-                // DESPUÉS creamos los botones basados en los datos cargados
                 crearBotonesCategorias();
+                renderizarTienda();
             } catch (error) {
                 console.error("Error cargando los archivos de datos.json: ", error);
             }
@@ -264,59 +260,42 @@
             const seccionDescargas = document.getElementById('descargas');
             if (!seccionDescargas) return;
 
-            // Eliminar contenedor anterior si ya existía para redibujar de forma limpia
-            const contenedorViejo = document.getElementById('filtro-categorias-container');
-            if (contenedorViejo) contenedorViejo.remove();
+            // Verificar si ya existen los botones para no duplicarlos
+            if (document.getElementById('filtro-categorias-container')) return;
 
+            // Obtener todas las categorías únicas del JSON
             const categoriasUnicas = [...new Set(baseDatosApps.map(app => app.categoria))];
             
+            // Crear el contenedor de los botones de filtro
             const contenedorFiltros = document.createElement('div');
             contenedorFiltros.id = 'filtro-categorias-container';
-            contenedorFiltros.style.cssText = 'display: flex; justify-content: center; gap: 15px; margin: -20px auto 40px auto; flex-wrap: wrap; max-width: 1200px; padding: 0 20px; box-sizing: border-box;';
+            contenedorFiltros.style.cssText = 'display: flex; justify-content: center; gap: 15px; margin: -20px auto 40px auto; flex-wrap: wrap; max-width: 1200px;';
 
-            // Botón Mostrar Todo activo por defecto con su color naranja corporativo fijo
-            contenedorFiltros.innerHTML = `<button class="btn-filtro active" data-categoria="todos" onclick="filtrarPorCategoria('todos')" style="background-color: #e05e2b; color: #ffffff; border: none; padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">🌐 Mostrar Todo</button>`;
+            // Botón para mostrar TODAS las categorías
+            contenedorFiltros.innerHTML = `<button onclick="renderizarTienda()" style="background-color: var(--primary-accent); color: #ffffff; border: none; padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: background-color 0.2s;">🌐 Mostrar Todo</button>`;
 
+            // Agregar un botón por cada categoría encontrada con su icono
             categoriasUnicas.forEach(cat => {
                 const appConCat = baseDatosApps.find(app => app.categoria === cat);
                 const icono = appConCat ? appConCat.categoria_icono || '📁' : '📁';
                 
                 contenedorFiltros.innerHTML += `
-                    <button class="btn-filtro" data-categoria="${cat}" onclick="filtrarPorCategoria('${cat}')" style="background-color: #ffffff; color: #2d3748; border: 1px solid #e2e8f0; padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <button onclick="filtrarPorCategoria('${cat}')" style="background-color: #ffffff; color: var(--text-dark); border: 1px solid var(--border-color); padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                         ${icono} ${cat}
                     </button>
                 `;
             });
 
+            // Insertar los botones justo debajo del título principal "Herramientas y Aplicaciones"
             const tituloH2 = seccionDescargas.querySelector('h2');
             if (tituloH2) {
                 tituloH2.insertAdjacentElement('afterend', contenedorFiltros);
             }
         }
 
-
-        // 3. Filtrar las aplicaciones al hacer clic en los botones (Actualiza colores de selección)
+        // 3. Filtrar las aplicaciones al hacer clic en los botones
         function filtrarPorCategoria(categoriaSeleccionada) {
-            const botones = document.querySelectorAll('.btn-filtro');
-            botones.forEach(btn => {
-                if (btn.getAttribute('data-categoria') === categoriaSeleccionada) {
-                    btn.classList.add('active');
-                    btn.style.backgroundColor = 'var(--primary-accent)';
-                    btn.style.color = '#ffffff';
-                    btn.style.borderColor = 'transparent';
-                } else {
-                    btn.classList.remove('active');
-                    btn.style.backgroundColor = '#ffffff';
-                    btn.style.color = 'var(--text-dark)';
-                    btn.style.border = '1px solid var(--border-color)';
-                }
-            });
-
-            if (categoriaSeleccionada === 'todos') {
-                renderizarTienda(null);
-            } else {
-                renderizarTienda(categoriaSeleccionada);
-            }
+            renderizarTienda(categoriaSeleccionada);
         }
 
         // 4. Dibujar las tarjetas según la categoría seleccionada
@@ -326,8 +305,10 @@
             contenedor.innerHTML = '';
 
             baseDatosApps.forEach(app => {
+                // Si hay un filtro activo y no coincide con la categoría, saltar al siguiente elemento
                 if (categoriaFiltro && app.categoria !== categoriaFiltro) return;
 
+                // Dibujar icono de categoría dentro de la tarjeta
                 const iconoBadge = app.categoria_icono ? `<span style="position: absolute; bottom: 10px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 10px; font-size: 0.8rem; border-radius: 20px; font-weight: 600; display: flex; align-items: center; gap: 5px;">${app.categoria_icono} ${app.categoria}</span>` : '';
 
                 if(app.en_construccion) {
@@ -363,7 +344,7 @@
             });
         }
 
-        // 5. Dibujar la pantalla de detalles leyendo e interpretando las viñetas reales
+        // 5. Dibujar la pantalla interna de detalles corrigiendo la impresión de listas
         function verDetallesApp(idApp) {
             const app = baseDatosApps.find(a => a.id === idApp);
             if (!app) return;
@@ -378,7 +359,7 @@
             let arregloCapturas = app.capturas && app.capturas.length > 0 ? app.capturas : [app.imagen_tarjeta, app.imagen_tarjeta, app.imagen_tarjeta];
             let itemsCapturas = arregloCapturas.map(c => `<div class="screenshot-item"><img src="${c}" alt="Captura"></div>`).join('');
 
-            // Se corrigieron los literales de plantilla eliminando las barras invertidas incorrectas
+            // Se eliminaron las barras de escape para imprimir las variables de las listas correctamente
             vistaDetalles.innerHTML = `
                 <div class="back-nav-container">
                     <button class="back-btn" onclick="showMainStore('descargas')">← VOLVER AL REPOSITORIO</button>
@@ -404,8 +385,8 @@
                     <h3>Descripción Operativa Completa</h3>
                     <div>${textoDescripcionLarga}</div>
 
-                    ${itemsGratis ? `<h3>🎁 Lo que llevas GRATIS (Versión Free)</h3><ul>${itemsGratis}</ul>` : ''}
-                    ${itemsPremium ? `<h3>🚀 ¿Quieres poder restrictivo? Pasa al PLAN PREMIUM</h3><ul>${itemsPremium}</ul>` : ''}
+                    ${itemsGratis ? `<h3>🎁 Lo que llevas GRATIS (Versión Free)</h3><ul>\${itemsGratis}</ul>` : ''}
+                    ${itemsPremium ? `<h3>🚀 ¿Quieres poder restrictivo? Pasa al PLAN PREMIUM</h3><ul>\${itemsPremium}</ul>` : ''}
 
                     <div class="alert-box">
                         <h5>⚠️ NOTA IMPORTANTE DE INSTALACIÓN</h5>
@@ -419,19 +400,23 @@
             window.scrollTo(0, 0);
         }
 
-        // 6. Navegación básica para volver a la tienda principal
+        // 6. Navegación básica para regresar a la página principal
         function showMainStore(targetSectionId) {
             const vistaDetalles = document.getElementById('details-view');
             const vistaPrincipal = document.getElementById('main-store-view');
             
             if (vistaDetalles) vistaDetalles.style.display = 'none';
             if (vistaPrincipal) vistaPrincipal.style.display = 'block';
+            
             if (targetSectionId) {
                 setTimeout(function() {
                     const element = document.getElementById(targetSectionId);
                     if (element) element.scrollIntoView({ behavior: 'smooth' });
-                    }, 50);
-                    }}
+                }, 50);
+            }
+        }
+
+        window.onload = cargarDatos;
     </script>
 </body>
 </html>
