@@ -57,7 +57,7 @@
         .hero-btn:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
         .hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
         .hero-image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
-        /* SECCIÓN DE DESCARGAS POR CATEGORÍAS */
+        /* DESCARGAS */
         .carousel-section {
             background-image: linear-gradient(rgba(59, 54, 52, 0.88), rgba(59, 54, 52, 0.88)), url('imagenes/img.chispahorro2.jpg');
             background-size: cover; background-position: center; background-attachment: fixed;
@@ -66,20 +66,17 @@
         .carousel-section h2 { font-size: 2.2rem; margin: 0 0 50px 0; font-weight: 700; letter-spacing: 0.5px; }
         .categories-grid { display: flex; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
 
-        /* DISEÑO DE TARJETA AUTOMÁTICA */
-        .card { background-color: #ffffff; border-radius: 8px; width: 320px; box-sizing: border-box; text-align: left; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); transition: transform 0.3s, box-shadow 0.3s; }
+        /* TARJETAS */
+        .card { background-color: #ffffff; border-radius: 8px; width: 320px; box-sizing: border-box; text-align: left; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); transition: transform 0.3s, box-shadow 0.3s; position: relative; }
         .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); }
         .card-image-top { width: 100%; height: 180px; overflow: hidden; background-color: #eaecef; position: relative; }
         .card-image-top img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-        .card.under-construction { opacity: 0.75; background-color: #f7fafc; }
-        .construction-overlay { position: absolute; top: 15px; right: 15px; background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 5px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
         .card-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
         .card h3 { font-size: 1.25rem; font-weight: 700; margin: 0 0 10px 0; color: #2d3748; }
         .card p { font-size: 0.9rem; color: #4a5568; line-height: 1.6; margin: 0 0 20px 0; flex-grow: 1; }
         .card-btn { background-color: var(--primary-accent); color: #ffffff; text-decoration: none; padding: 12px 20px; font-size: 0.9rem; font-weight: 700; border-radius: 4px; text-align: center; display: block; transition: background-color 0.2s; border: none; width: 100%; cursor: pointer; font-family: inherit; }
         .card-btn:hover { background-color: var(--primary-hover); }
-        .card-btn.disabled { background-color: #cbd5e0; color: #718096; cursor: not-allowed; }
-        /* SECCIÓN SOBRE NOSOTROS */
+        /* ABOUT */
         .about-section { min-height: 90vh; display: flex; align-items: center; justify-content: center; padding: 80px 80px; box-sizing: border-box; scroll-margin-top: 65px; background-color: var(--bg-white); }
         .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: center; width: 100%; }
         .about-text-content { text-align: left; }
@@ -91,10 +88,10 @@
         .about-image-container { display: flex; justify-content: center; width: 100%; }
         .about-profile-img { width: 100%; max-width: 420px; height: 340px; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
 
-        /* SECCIÓN CONTACTO */
-        .contact-section { background-color: var(--bg-light); border-top: 1px solid var(--border-color); padding: 80px 80px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; min-height: 90vh; scroll-margin-top: 65px; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: start; width: 100%; }
-        .contact-info-channels { text-align: left; }
+        /* CONTACTO */
+        .contact-section { background-color: var(--bg-light); border-top: 1px solid var(--border-color); padding: 80px 80px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; min-height: 40vh; scroll-margin-top: 65px; }
+        .contact-grid { display: grid; grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; text-align: center; width: 100%; }
+        .contact-info-channels { text-align: center; }
         .contact-info-channels h2 { font-size: 2.4rem; margin: 0 0 20px 0; color: var(--text-dark); font-weight: 700; }
         .contact-subtitle { font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin: 0 0 35px 0; }
         .info-cards-stack { display: flex; flex-direction: column; gap: 20px; }
@@ -104,15 +101,7 @@
         .card-details { display: flex; flex-direction: column; text-align: left; }
         .card-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; font-weight: 600; }
         .card-value { font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-top: 2px; word-break: break-all; }
-        .contact-form-holder { width: 100%; }
-        .b2b-clean-form { background: var(--bg-white); padding: 35px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.02); display: flex; flex-direction: column; gap: 20px; }
-        .form-group-b2b { display: flex; flex-direction: column; gap: 6px; text-align: left; }
-        .form-group-b2b label { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); }
-        .form-group-b2b input, .form-group-b2b textarea { padding: 14px; font-size: 0.95rem; border: 1px solid var(--border-color); border-radius: 4px; outline: none; font-family: inherit; background-color: var(--bg-light); transition: all 0.2s; }
-        .form-group-b2b input:focus, .form-group-b2b textarea:focus { border-color: var(--primary-accent); background-color: var(--bg-white); }
-        .btn-submit-form { width: 100%; padding: 16px; background-color: var(--primary-accent); color: #ffffff; border: none; border-radius: 4px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background-color 0.2s; margin-top: 5px; }
-        .btn-submit-form:hover { background-color: var(--primary-hover); }
-        /* VISTA DETALLES DINÁMICA */
+        /* DETALLES DINÁMICOS */
         #details-view { display: none; margin-top: 65px; background-color: #ffffff; padding: 40px 80px; box-sizing: border-box; }
         .back-nav-container { max-width: 1200px; margin: 0 auto 30px auto; }
         .back-btn { display: inline-flex; align-items: center; background: none; border: none; color: #4a5568; font-size: 0.95rem; font-weight: 700; cursor: pointer; text-decoration: none; padding: 0; transition: color 0.2s; letter-spacing: 0.5px; }
@@ -140,7 +129,6 @@
 
         footer { background-color: var(--text-dark); color: #a0aec0; padding: 25px 20px; font-size: 0.85rem; text-align: center; margin-top: auto; }
 
-        /* RESPONSIVE */
         @media (max-width: 990px) {
             nav { padding: 12px 20px; flex-direction: column; gap: 12px; text-align: center; }
             .nav-links { gap: 15px; width: 100%; justify-content: center; flex-wrap: wrap; }
@@ -150,7 +138,6 @@
             .about-section, .contact-section { min-height: auto; padding: 60px 20px; }
             .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
             .about-profile-img { height: 280px; }
-            .b2b-clean-form { padding: 25px; }
             #details-view { padding: 30px 20px; margin-top: 110px; }
             .app-landing-header { flex-direction: column; text-align: center; }
         }
@@ -184,7 +171,7 @@
         <section id="descargas" class="carousel-section">
             <h2>Herramientas y Aplicaciones</h2>
             <div class="categories-grid" id="contenedor-apps">
-                <!-- JavaScript dibujará aquí las tarjetas de forma automática -->
+                <!-- JavaScript inyectará las tarjetas aquí -->
             </div>
         </section>
 
@@ -208,13 +195,13 @@
                 </div>
             </div>
         </section>
-                <section id="contacto" class="contact-section">
-            <div class="contact-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; text-align: center;">
-                <div class="contact-info-channels" style="text-align: center;">
+        <section id="contacto" class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info-channels">
                     <h2>CONTACTO</h2>
                     <p class="contact-subtitle">¿Tienes un proyecto en mente? Hablemos de ingeniería de software.</p>
                     <div class="info-cards-stack">
-                        <a href="mailto:felixvargassoluciones@://gmail.com" class="contact-card-link">
+                        <a href="mailto:felixvargassoluciones@gmail.com" class="contact-card-link">
                             <div class="card-icon">✉️</div>
                             <div class="card-details">
                                 <span class="card-label">Correo Oficial</span>
@@ -232,15 +219,15 @@
                 </div>
             </div>
         </section>
+    </div> <!-- AQUÍ CIERRA CORRECTAMENTE EL CONTENEDOR PRINCIPAL -->
 
-    </div> <!-- FIN DE LA VISTA PRINCIPAL -->
-    <!-- ENTORNO CONTENEDOR VISTA DETALLES (JavaScript inyectará el contenido aquí adentro) -->
+    <!-- CONTENEDOR DE LA VISTA DE DETALLES -->
     <div id="details-view"></div> 
 
     <footer>
         ByteCore Labs. All rights reserved. © 2026
     </footer>
-        <script>
+    <script>
         let baseDatosApps = [];
 
         // 1. Cargar archivo datos.json automáticamente al abrir la página
@@ -248,10 +235,14 @@
             try {
                 const respuesta = await fetch('datos.json');
                 baseDatosApps = await respuesta.json();
-                crearBotonesCategorias();
+                
+                // Primero dibujamos las tarjetas para que existan en el navegador
                 renderizarTienda();
+                
+                // Inmediatamente después creamos los botones basados en las tarjetas existentes
+                crearBotonesCategorias();
             } catch (error) {
-                console.error("Error cargando los archivos de datos.json: ", error);
+                console.error("Error crítico cargando la base de datos JSON: ", error);
             }
         }
 
@@ -260,91 +251,84 @@
             const seccionDescargas = document.getElementById('descargas');
             if (!seccionDescargas) return;
 
-            // Verificar si ya existen los botones para no duplicarlos
-            if (document.getElementById('filtro-categorias-container')) return;
+            const contenedorViejo = document.getElementById('filtro-categorias-container');
+            if (contenedorViejo) contenedorViejo.remove();
 
-            // Obtener todas las categorías únicas del JSON
             const categoriasUnicas = [...new Set(baseDatosApps.map(app => app.categoria))];
             
-            // Crear el contenedor de los botones de filtro
             const contenedorFiltros = document.createElement('div');
             contenedorFiltros.id = 'filtro-categorias-container';
-            contenedorFiltros.style.cssText = 'display: flex; justify-content: center; gap: 15px; margin: -20px auto 40px auto; flex-wrap: wrap; max-width: 1200px;';
+            contenedorFiltros.style.cssText = 'display: flex; justify-content: center; gap: 15px; margin: -20px auto 40px auto; flex-wrap: wrap; max-width: 1200px; padding: 0 20px; box-sizing: border-box;';
 
-            // Botón para mostrar TODAS las categorías
-            contenedorFiltros.innerHTML = `<button onclick="renderizarTienda()" style="background-color: var(--primary-accent); color: #ffffff; border: none; padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: background-color 0.2s;">🌐 Mostrar Todo</button>`;
+            // Botón Mostrar Todo activo por defecto con su color naranja corporativo fijo
+            contenedorFiltros.innerHTML = `<button class="btn-filtro active" data-categoria="todos" onclick="filtrarPorCategoria('todos')" style="background-color: #e05e2b; color: #ffffff; border: none; padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">🌐 Mostrar Todo</button>`;
 
-            // Agregar un botón por cada categoría encontrada con su icono
             categoriasUnicas.forEach(cat => {
                 const appConCat = baseDatosApps.find(app => app.categoria === cat);
                 const icono = appConCat ? appConCat.categoria_icono || '📁' : '📁';
                 
                 contenedorFiltros.innerHTML += `
-                    <button onclick="filtrarPorCategoria('${cat}')" style="background-color: #ffffff; color: var(--text-dark); border: 1px solid var(--border-color); padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <button class="btn-filtro" data-categoria="${cat}" onclick="filtrarPorCategoria('${cat}')" style="background-color: #ffffff; color: #2d3748; border: 1px solid #e2e8f0; padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                         ${icono} ${cat}
                     </button>
                 `;
             });
 
-            // Insertar los botones justo debajo del título principal "Herramientas y Aplicaciones"
             const tituloH2 = seccionDescargas.querySelector('h2');
             if (tituloH2) {
                 tituloH2.insertAdjacentElement('afterend', contenedorFiltros);
             }
         }
 
-        // 3. Filtrar las aplicaciones al hacer clic en los botones
+        // 3. Filtrar las aplicaciones al hacer clic en los botones (Actualiza colores de selección)
         function filtrarPorCategoria(categoriaSeleccionada) {
-            renderizarTienda(categoriaSeleccionada);
-        }
+            const botones = document.querySelectorAll('.btn-filtro');
+            botones.forEach(btn => {
+                if (btn.getAttribute('data-categoria') === categoriaSeleccionada) {
+                    btn.style.backgroundColor = '#e05e2b';
+                    btn.style.color = '#ffffff';
+                    btn.style.borderColor = 'transparent';
+                } else {
+                    btn.style.backgroundColor = '#ffffff';
+                    btn.style.color = '#2d3748';
+                    btn.style.border = '1px solid #e2e8f0';
+                }
+            });
 
-        // 4. Dibujar las tarjetas según la categoría seleccionada
+            if (categoriaSeleccionada === 'todos') {
+                renderizarTienda(null);
+            } else {
+                renderizarTienda(categoriaSeleccionada);
+            }
+        }
+        // 4. Dibujar las tarjetas en la cuadrícula de inicio según la categoría
         function renderizarTienda(categoriaFiltro = null) {
             const contenedor = document.getElementById('contenedor-apps');
             if (!contenedor) return;
             contenedor.innerHTML = '';
 
             baseDatosApps.forEach(app => {
-                // Si hay un filtro activo y no coincide con la categoría, saltar al siguiente elemento
                 if (categoriaFiltro && app.categoria !== categoriaFiltro) return;
 
-                // Dibujar icono de categoría dentro de la tarjeta
                 const iconoBadge = app.categoria_icono ? `<span style="position: absolute; bottom: 10px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 10px; font-size: 0.8rem; border-radius: 20px; font-weight: 600; display: flex; align-items: center; gap: 5px;">${app.categoria_icono} ${app.categoria}</span>` : '';
 
-                if(app.en_construccion) {
-                    contenedor.innerHTML += `
-                        <div class="card under-construction">
-                            <div class="card-image-top">
-                                <span class="construction-overlay">${app.badge_texto || 'Próximamente'}</span>
-                                <img src="${app.imagen_tarjeta}" alt="${app.titulo}" style="filter: grayscale(100%);">
-                                ${iconoBadge}
-                            </div>
-                            <div class="card-body">
-                                <h3>${app.titulo}</h3>
-                                <p>${app.descripcion_corta}</p>
-                                <a href="#" class="card-btn disabled">En Construcción</a>
-                            </div>
+                contenedor.innerHTML += `
+                    <div class="card">
+                        <div class="card-image-top">
+                            <img src="${app.imagen_tarjeta}" alt="${app.titulo}">
+                            ${iconoBadge}
                         </div>
-                    `;
-                } else {
-                    contenedor.innerHTML += `
-                        <div class="card">
-                            <div class="card-image-top">
-                                <img src="${app.imagen_tarjeta}" alt="${app.titulo}">
-                                ${iconoBadge}
-                            </div>
-                            <div class="card-body">
-                                <h3>${app.titulo}</h3>
-                                <p>${app.descripcion_corta}</p>
-                                <button type="button" onclick="verDetallesApp('${app.id}')" class="card-btn">Ver Detalles</button>
-                            </div>
+                        <div class="card-body">
+                            <h3>${app.titulo}</h3>
+                            <p>${app.descripcion_corta}</p>
+                            <button type="button" onclick="verDetallesApp('${app.id}')" class="card-btn">Ver Detalles</button>
                         </div>
-                    `;
-                }
+                    </div>
+                `;
             });
         }
 
-        // 5. Dibujar la pantalla interna de detalles corrigiendo la impresión de listas
+        // 5. Dibujar la pantalla de detalles de forma limpia interpretando las listas reales
         function verDetallesApp(idApp) {
             const app = baseDatosApps.find(a => a.id === idApp);
             if (!app) return;
@@ -352,45 +336,37 @@
             const vistaDetalles = document.getElementById('details-view');
             if (!vistaDetalles) return;
             
-            let textoDescripcionLarga = app.descripcion_larga || `<p><strong>${app.titulo}</strong></p><p>${app.descripcion_corta}</p>`;
             let itemsGratis = app.gratis_lista ? app.gratis_lista.map(i => `<li>${i}</li>`).join('') : '';
             let itemsPremium = app.premium_lista ? app.premium_lista.map(i => `<li>${i}</li>`).join('') : '';
-            
             let arregloCapturas = app.capturas && app.capturas.length > 0 ? app.capturas : [app.imagen_tarjeta, app.imagen_tarjeta, app.imagen_tarjeta];
             let itemsCapturas = arregloCapturas.map(c => `<div class="screenshot-item"><img src="${c}" alt="Captura"></div>`).join('');
 
-            // Se eliminaron las barras de escape para imprimir las variables de las listas correctamente
             vistaDetalles.innerHTML = `
                 <div class="back-nav-container">
                     <button class="back-btn" onclick="showMainStore('descargas')">← VOLVER AL REPOSITORIO</button>
                 </div>
-
                 <header class="app-landing-header">
                     <div class="app-icon-box">
                         <img src="${app.imagen_tarjeta}" alt="${app.titulo}">
                     </div>
                     <div class="app-header-info">
                         <h2>${app.subtitulo || app.titulo}</h2>
-                        <p class="developer-tag">${app.tag || 'Desarrollador Verificado • Ejecutable Nativo'}</p>
-                        <a href="${app.archivo_descarga || '#'}" download="${app.nombre_archivo_guardar || 'archivo'}" class="download-now-btn">Download Now</a>
+                        <p class="developer-tag">${app.tag}</p>
+                        <a href="${app.archivo_descarga}" download="${app.nombre_archivo_guardar}" class="download-now-btn">Download Now</a>
                     </div>
                 </header>
-
                 <section class="screenshots-section">
                     <h4>Capturas de pantalla en entorno real</h4>
                     <div class="screenshots-container">${itemsCapturas}</div>
                 </section>
-
                 <article class="app-description-content">
                     <h3>Descripción Operativa Completa</h3>
-                    <div>${textoDescripcionLarga}</div>
-
+                    <div>${app.descripcion_larga}</div>
                     ${itemsGratis ? `<h3>🎁 Lo que llevas GRATIS (Versión Free)</h3><ul>\${itemsGratis}</ul>` : ''}
                     ${itemsPremium ? `<h3>🚀 ¿Quieres poder restrictivo? Pasa al PLAN PREMIUM</h3><ul>\${itemsPremium}</ul>` : ''}
-
                     <div class="alert-box">
                         <h5>⚠️ NOTA IMPORTANTE DE INSTALACIÓN</h5>
-                        <p>Al ser un software o documento de distribución directa corporativa, tu sistema operativo podría alertarte sobre un "Origen o Aplicación Desconocida". No te preocupes, todos nuestros recursos y ejecutables están 100% verificados en nuestro laboratorio y libres de riesgos.</p>
+                        <p>Al ser un software o documento de distribución directa corporativa, tu sistema operativo podría alertarte sobre un "Origen o Aplicación Desconocida". No te preocupes, todos nuestros recursos y ejecutables están 100% verificados de forma interna en nuestro laboratorio y libres de riesgos.</p>
                     </div>
                 </article>
             `;
@@ -400,24 +376,20 @@
             window.scrollTo(0, 0);
         }
 
-        // 6. Navegación básica para regresar a la página principal
+        // 6. Navegación SPA interna de cambio de secciones
         function showMainStore(targetSectionId) {
-            const vistaDetalles = document.getElementById('details-view');
-            const vistaPrincipal = document.getElementById('main-store-view');
-            
-            if (vistaDetalles) vistaDetalles.style.display = 'none';
-            if (vistaPrincipal) vistaPrincipal.style.display = 'block';
-            
+            document.getElementById('details-view').style.display = 'none';
+            document.getElementById('main-store-view').style.display = 'block';
             if (targetSectionId) {
-                setTimeout(function() {
+                setTimeout(() => {
                     const element = document.getElementById(targetSectionId);
                     if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }, 50);
             }
         }
 
+        // Despliegue automático de datos iniciales
         window.onload = cargarDatos;
     </script>
 </body>
 </html>
-
