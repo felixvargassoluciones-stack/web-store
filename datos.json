@@ -1,6 +1,8 @@
 [
   {
     "id": "bunker-epp",
+    "categoria": "Android",
+    "categoria_icono": "🤖",
     "titulo": "Móvil Android (Bunker EPP)",
     "subtitulo": "BUNKER EPP V1.7",
     "tag": "Desarrollador Verificado • Ejecutable Nativo Android",
@@ -9,25 +11,50 @@
     "archivo_descarga": "app/chispahorro.apk",
     "nombre_archivo_guardar": "Bunker_EPP_v1.7.apk",
     "en_construccion": false,
-    "badge_texto": ""
+    "badge_texto": "",
+    "descripcion_larga": "<p><strong>DIGITALIZA TU OBRA CON BUNKER EPP 🛡️🦺</strong></p><p>¿Sigues firmando la entrega de EPP en hojas de papel que terminan manchadas, rotas o perdidas? Cuando llega una auditoría de la STPS o el IMSS, el papel no te va a salvar. Llegó la hora de tomar el control definitivo con Bunker EPP, la solución móvil creada para el trabajo rudo de campo. Cumple con la NOM-017 de la STPS directamente desde tu celular de forma automatizada.</p>",
+    "gratis_lista": [
+      "Control 100% Offline: Registra datos en sótanos, excavaciones o zonas sin señal.",
+      "Firmas Digitales de Conformidad: Captura la firma del trabajador directamente en la pantalla.",
+      "Auditoría de Costos: Desglosa e identifica el gasto de insumos por cada frente de trabajo.",
+      "Reportes Rápidos: Exporta y comparte las evidencias del día en formato de imagen."
+    ],
+    "premium_lista": [
+      "Respaldo en la Nube Bajo tu Control: Sincroniza el lote de evidencias de forma masiva.",
+      "Descarga Masiva del SUA: Importa el padrón completo desde la computadora en un solo clic.",
+      "Generador Avanzado de PDF: Crea bitácoras oficiales y hojas de control en segundos."
+    ],
+    "capturas": [
+      "imagenes/img.chispahorro.apk1.png",
+      "imagenes/img.chispahorro.apk1.png",
+      "imagenes/img.chispahorro.apk1.png"
+    ]
   },
-
-    {
-    "id": "escribe-un-nombre-unico-sin-espacios",
-    "titulo": "Título que sale en la tarjeta principal",
-    "subtitulo": "TÍTULO EN MAYÚSCULAS DENTRO DE DETALLES",
-    "tag": "Subtítulo pequeño (Ej: Documento PDF • Descarga Directa)",
-    "descripcion_corta": "Texto breve de 2 líneas para la tarjeta de la página de inicio.",
-    "imagen_tarjeta": "imagenes/nombre_de_tu_imagen.png",
-    "archivo_descarga": "app/nombre_de_tu_archivo.pdf",
-    "nombre_archivo_guardar": "Nombre_Con_El_Que_Se_Descargara.pdf",
+  {
+    "id": "ejemplo-windows",
+    "categoria": "Windows",
+    "categoria_icono": "💻",
+    "titulo": "Software de Escritorio Windows",
+    "subtitulo": "SISTEMA DESKTOP V1.0",
+    "tag": "Instalador Nativo • Sistema de Escritorio",
+    "descripcion_corta": "Herramienta SaaS industrial de alta velocidad para administración y gestión a gran escala.",
+    "imagen_tarjeta": "imagenes/img.chispahorro.apk1.png",
+    "archivo_descarga": "app/instalador.exe",
+    "nombre_archivo_guardar": "Instalador_ByteCore.exe",
     "en_construccion": false,
-    "badge_texto": ""
+    "badge_texto": "",
+    "descripcion_larga": "<p>Optimiza la gestión administrativa de tu infraestructura empresarial con nuestro entorno de escritorio optimizado para altas cargas de procesamiento de datos offline.</p>",
+    "gratis_lista": [
+      "Instalación local rápida sin dependencias.",
+      "Sincronización híbrida bajo demanda."
+    ],
+    "premium_lista": [
+      "Soporte multiusuario simultáneo en red local.",
+      "Módulo avanzado de auditoría fiscal incorporado."
+    ],
+    "capturas": [
+      "imagenes/img.chispahorro.apk1.png",
+      "imagenes/img.chispahorro.apk1.png"
+    ]
   }
-
-
-
-
-
-
 ]
