@@ -241,15 +241,19 @@
         ByteCore Labs. All rights reserved. © 2026
     </footer>
             <script>
-        let baseDatosApps = [];
+                let baseDatosApps = [];
 
         // 1. Cargar archivo datos.json automáticamente al abrir la página
         async function cargarDatos() {
             try {
                 const respuesta = await fetch('datos.json');
                 baseDatosApps = await respuesta.json();
-                crearBotonesCategorias();
+                
+                // PRIMERO renderizamos las tarjetas para que existan en el navegador
                 renderizarTienda();
+                
+                // DESPUÉS creamos los botones basados en los datos cargados
+                crearBotonesCategorias();
             } catch (error) {
                 console.error("Error cargando los archivos de datos.json: ", error);
             }
@@ -268,17 +272,17 @@
             
             const contenedorFiltros = document.createElement('div');
             contenedorFiltros.id = 'filtro-categorias-container';
-            contenedorFiltros.style.cssText = 'display: flex; justify-content: center; gap: 15px; margin: -20px auto 40px auto; flex-wrap: wrap; max-width: 1200px;';
+            contenedorFiltros.style.cssText = 'display: flex; justify-content: center; gap: 15px; margin: -20px auto 40px auto; flex-wrap: wrap; max-width: 1200px; padding: 0 20px; box-sizing: border-box;';
 
-            // Botón Mostrar Todo activo por defecto
-            contenedorFiltros.innerHTML = `<button class="btn-filtro active" data-categoria="todos" onclick="filtrarPorCategoria('todos')" style="background-color: var(--primary-accent); color: #ffffff; border: none; padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">🌐 Mostrar Todo</button>`;
+            // Botón Mostrar Todo activo por defecto con su color naranja corporativo fijo
+            contenedorFiltros.innerHTML = `<button class="btn-filtro active" data-categoria="todos" onclick="filtrarPorCategoria('todos')" style="background-color: #e05e2b; color: #ffffff; border: none; padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">🌐 Mostrar Todo</button>`;
 
             categoriasUnicas.forEach(cat => {
                 const appConCat = baseDatosApps.find(app => app.categoria === cat);
                 const icono = appConCat ? appConCat.categoria_icono || '📁' : '📁';
                 
                 contenedorFiltros.innerHTML += `
-                    <button class="btn-filtro" data-categoria="${cat}" onclick="filtrarPorCategoria('${cat}')" style="background-color: #ffffff; color: var(--text-dark); border: 1px solid var(--border-color); padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <button class="btn-filtro" data-categoria="${cat}" onclick="filtrarPorCategoria('${cat}')" style="background-color: #ffffff; color: #2d3748; border: 1px solid #e2e8f0; padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                         ${icono} ${cat}
                     </button>
                 `;
@@ -289,6 +293,7 @@
                 tituloH2.insertAdjacentElement('afterend', contenedorFiltros);
             }
         }
+
 
         // 3. Filtrar las aplicaciones al hacer clic en los botones (Actualiza colores de selección)
         function filtrarPorCategoria(categoriaSeleccionada) {
