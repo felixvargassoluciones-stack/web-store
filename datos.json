@@ -1,0 +1,14 @@
+[
+  {
+    "id": "bunker-epp",
+    "titulo": "Móvil Android (Bunker EPP)",
+    "subtitulo": "BUNKER EPP V1.7",
+    "tag": "Desarrollador Verificado • Ejecutable Nativo Android",
+    "descripcion_corta": "Solución móvil definitiva para constructores y contratistas. Diseñada específicamente para el trabajo rudo de campo. Control 100% offline.",
+    "imagen_tarjeta": "imagenes/img.chispahorro.apk1.png",
+    "archivo_descarga": "app/chispahorro.apk",
+    "nombre_archivo_guardar": "Bunker_EPP_v1.7.apk",
+    "en_construccion": false,
+    "badge_texto": ""
+  }
+]
