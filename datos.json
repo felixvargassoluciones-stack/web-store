@@ -30,7 +30,6 @@
       "imagenes/img.chispahorro.apk1.png"
     ]
   },
-
   {
     "id": "ejemplo-windows",
     "categoria": "Windows",
@@ -46,58 +45,41 @@
     "badge_texto": "",
     "descripcion_larga": "<p>Optimiza la gestión administrativa de tu infraestructura empresarial con nuestro entorno de escritorio optimizado para altas cargas de procesamiento de datos offline.</p>",
     "gratis_lista": [
-      "Control 100% Offline: Registra datos en sótanos, excavaciones o zonas sin señal.",
-      "Firmas Digitales de Conformidad: Captura la firma del trabajador directamente en la pantalla.",
-      "Auditoría de Costos: Desglosa e identifica el gasto de insumos por cada frente de trabajo.",
-      "Reportes Rápidos: Exporta y comparte las evidencias del día en formato de imagen."
+      "Instalación local rápida sin dependencias externas.",
+      "Sincronización híbrida segura bajo demanda."
     ],
     "premium_lista": [
-      "Respaldo en la Nube Bajo tu Control: Sincroniza el lote de evidencias de forma masiva.",
-      "Descarga Masiva del SUA: Importa el padrón completo desde la computadora en un solo clic.",
-      "Generador Avanzado de PDF: Crea bitácoras oficiales y hojas de control en segundos."
+      "Soporte multiusuario simultáneo en red local interna.",
+      "Módulo avanzado de auditoría fiscal incorporado."
     ],
     "capturas": [
-      "imagenes/img.chispahorro.apk1.png",
       "imagenes/img.chispahorro.apk1.png",
       "imagenes/img.chispahorro.apk1.png"
     ]
   },
-
-{
-    "id": "ejemplo-windows",
-    "categoria": "Windows",
-    "categoria_icono": "💻",
-    "titulo": "Software de Escritorio Windows",
-    "subtitulo": "SISTEMA DESKTOP V1.0",
-    "tag": "Instalador Nativo • Sistema de Escritorio",
-    "descripcion_corta": "Herramienta SaaS industrial de alta velocidad para administración y gestión a gran escala.",
+  {
+    "id": "manual-usuario",
+    "categoria": "PDF",
+    "categoria_icono": "📄",
+    "titulo": "Manual de Usuario Oficial",
+    "subtitulo": "DOCUMENTACIÓN COMPLETA PDF",
+    "tag": "Archivo PDF • Descarga Directa",
+    "descripcion_corta": "Guía oficial en formato digital con los requerimientos técnicos e instrucciones paso a paso.",
     "imagen_tarjeta": "imagenes/img.chispahorro.apk1.png",
-    "archivo_descarga": "app/instalador.exe",
-    "nombre_archivo_guardar": "Instalador_ByteCore.exe",
+    "archivo_descarga": "app/manual.pdf",
+    "nombre_archivo_guardar": "Manual_ByteCoreLab.pdf",
     "en_construccion": false,
     "badge_texto": "",
-    "descripcion_larga": "<p>Optimiza la gestión administrativa de tu infraestructura empresarial con nuestro entorno de escritorio optimizado para altas cargas de procesamiento de datos offline.</p>",
+    "descripcion_larga": "<p>Consulte las especificaciones oficiales de despliegue, parametrización de bases de datos locales y políticas de sincronización offline para la suite completa de ByteCoreLab.</p>",
     "gratis_lista": [
-      "Control 100% Offline: Registra datos en sótanos, excavaciones o zonas sin señal.",
-      "Firmas Digitales de Conformidad: Captura la firma del trabajador directamente en la pantalla.",
-      "Auditoría de Costos: Desglosa e identifica el gasto de insumos por cada frente de trabajo.",
-      "Reportes Rápidos: Exporta y comparte las evidencias del día en formato de imagen."
+      "Lectura ligera optimizada para dispositivos móviles.",
+      "Esquemas lógicos de arquitectura explicados paso a paso."
     ],
     "premium_lista": [
-      "Respaldo en la Nube Bajo tu Control: Sincroniza el lote de evidencias de forma masiva.",
-      "Descarga Masiva del SUA: Importa el padrón completo desde la computadora en un solo clic.",
-      "Generador Avanzado de PDF: Crea bitácoras oficiales y hojas de control en segundos."
+      "Anexo extendido con solución de problemas y códigos de error comunes."
     ],
     "capturas": [
-      "imagenes/img.chispahorro.apk1.png",
-      "imagenes/img.chispahorro.apk1.png",
       "imagenes/img.chispahorro.apk1.png"
     ]
   }
-
-
-
-
-
-
 ]
