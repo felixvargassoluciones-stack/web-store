@@ -10,5 +10,24 @@
     "nombre_archivo_guardar": "Bunker_EPP_v1.7.apk",
     "en_construccion": false,
     "badge_texto": ""
+  },
+
+    {
+    "id": "escribe-un-nombre-unico-sin-espacios",
+    "titulo": "Título que sale en la tarjeta principal",
+    "subtitulo": "TÍTULO EN MAYÚSCULAS DENTRO DE DETALLES",
+    "tag": "Subtítulo pequeño (Ej: Documento PDF • Descarga Directa)",
+    "descripcion_corta": "Texto breve de 2 líneas para la tarjeta de la página de inicio.",
+    "imagen_tarjeta": "imagenes/nombre_de_tu_imagen.png",
+    "archivo_descarga": "app/nombre_de_tu_archivo.pdf",
+    "nombre_archivo_guardar": "Nombre_Con_El_Que_Se_Descargara.pdf",
+    "en_construccion": false,
+    "badge_texto": ""
   }
+
+
+
+
+
+
 ]
