@@ -9,758 +9,148 @@
         :root {
             --bg-light: #f4f5f7;
             --bg-white: #ffffff;
-            --primary-accent: #e05e2b; /* Naranja/óxido corporativo */
+            --primary-accent: #e05e2b; 
             --primary-hover: #c94f22;
-            --bg-dark-banner: #3b3634; /* Tono marrón/oscuro de descargas */
+            --bg-dark-banner: #3b3634; 
             --text-dark: #2d3748;
             --text-muted: #718096;
             --border-color: #e2e8f0;
-            --btn-blue: #00b4d8; /* Azul para Download Now */
+            --btn-blue: #00b4d8; 
             --btn-blue-hover: #0077b6;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-light);
             color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            box-sizing: border-box;
+            margin: 0; padding: 0;
+            display: flex; flex-direction: column;
+            min-height: 100vh; box-sizing: border-box;
         }
-
         /* BARRA DE NAVEGACIÓN FIJA */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
+            position: fixed; top: 0; width: 100%;
             background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 80px;
-            box-sizing: border-box;
-            z-index: 1000;
+            backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-color);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 80px; box-sizing: border-box; z-index: 1000;
         }
-
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: 0.5px;
-            color: var(--text-dark);
-        }
-
-        .nav-logo span {
-            color: var(--primary-accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 35px;
-        }
-
-        .nav-links a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-accent);
-        }
+        .nav-logo { font-weight: 700; font-size: 1.25rem; letter-spacing: 0.5px; color: var(--text-dark); }
+        .nav-logo span { color: var(--primary-accent); }
+        .nav-links { display: flex; gap: 35px; }
+        .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary-accent); }
 
         /* SECCIÓN HERO CENTRADA */
         .hero-section {
-            margin-top: 65px;
-            position: relative;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 80px;
-            box-sizing: border-box;
-            overflow: hidden;
-            scroll-margin-top: 65px;
+            margin-top: 65px; position: relative; min-height: 90vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 0 80px; box-sizing: border-box; overflow: hidden; scroll-margin-top: 65px;
         }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.55);
-            z-index: 2;
-        }
-
-        .hero-text {
-            position: relative;
-            z-index: 3;
-            max-width: 750px;
-            text-align: center;
-            margin: 0 auto;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin: 0 0 20px 0;
-            line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            color: #e2e8f0;
-            line-height: 1.7;
-            margin: 0 0 30px 0;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        }
-
-        .hero-btn {
-            display: inline-block;
-            background-color: var(--primary-accent);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 14px 40px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            border-radius: 4px;
-            transition: background-color 0.2s, transform 0.2s;
-            box-shadow: 0 4px 15px rgba(224, 94, 43, 0.4);
-        }
-
-        .hero-btn:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-        }
-
-        .hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .hero-image img {
-           position: absolute;
-           top: 0;
-           left: 0;
-           width: 100%;
-           height: 100%;
-           object-fit: cover;
-           object-position: center;
-        }
+        .hero-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.55); z-index: 2; }
+        .hero-text { position: relative; z-index: 3; max-width: 750px; text-align: center; margin: 0 auto; }
+        .hero-text h1 { font-size: 3.5rem; font-weight: 700; color: #ffffff; margin: 0 0 20px 0; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .hero-text p { font-size: 1.2rem; color: #e2e8f0; line-height: 1.7; margin: 0 0 30px 0; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+        .hero-btn { display: inline-block; background-color: var(--primary-accent); color: #ffffff; text-decoration: none; padding: 14px 40px; font-size: 1.05rem; font-weight: 700; border-radius: 4px; transition: background-color 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(224, 94, 43, 0.4); }
+        .hero-btn:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
+        .hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .hero-image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
         /* SECCIÓN DE DESCARGAS POR CATEGORÍAS */
         .carousel-section {
             background-image: linear-gradient(rgba(59, 54, 52, 0.88), rgba(59, 54, 52, 0.88)), url('imagenes/img.chispahorro2.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 100px 80px;
-            color: #ffffff;
-            position: relative;
-            text-align: center;
-            min-height: 600px; 
-            scroll-margin-top: 65px; 
-        }
-
-        .carousel-section h2 {
-            font-size: 2.2rem;
-            margin: 0 0 50px 0;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .categories-grid {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
-
-        /* DISEÑO DE TARJETA CORTA COMPACTA */
-        .card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            width: 320px;
-            box-sizing: border-box;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .card-image-top {
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            background-color: #eaecef;
-            position: relative;
-        }
-
-        .card-image-top img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .card.under-construction {
-            opacity: 0.75;
-            background-color: #f7fafc;
-        }
-
-        .construction-overlay {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: rgba(0, 0, 0, 0.75);
-            color: #fff;
-            padding: 5px 12px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            border-radius: 3px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .card-body {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin: 0 0 10px 0;
-            color: #2d3748;
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            color: #4a5568;
-            line-height: 1.6;
-            margin: 0 0 20px 0;
-            flex-grow: 1;
-        }
-
-        .card-btn {
-            background-color: var(--primary-accent);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            border-radius: 4px;
-            text-align: center;
-            display: block;
-            transition: background-color 0.2s;
-        }
-
-        .card-btn:hover {
-            background-color: var(--primary-hover);
-        }
-
-        .card-btn.disabled {
-            background-color: #cbd5e0;
-            color: #718096;
-            cursor: not-allowed;
-        }
-
-               /* ==========================================
-           REEMPLAZO: SECCIÓN SOBRE NOSOTROS (CORREGIDO)
-           ========================================== */
-        .about-section {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 80px;
-            box-sizing: border-box;
-            scroll-margin-top: 65px;
-            background-color: var(--bg-white);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-            width: 100%;
-        }
-
-        .about-text-content {
-            text-align: left;
-        }
-
-        .about-text-content h2 {
-            font-size: 2.4rem;
-            color: var(--text-dark);
-            margin: 0 0 25px 0;
-            font-weight: 700;
-        }
-
-        .corporate-manifesto {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin: 0 0 20px 0;
-            text-align: justify;
-        }
-
-        .signature-block {
-            margin-top: 35px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .engineer-name {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--text-dark);
-        }
-
-        .engineer-role {
-            font-size: 0.85rem;
-            color: var(--primary-accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
-            font-weight: 600;
-        }
-
-        .about-image-container {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .about-profile-img {
-            width: 100%;
-            max-width: 420px;
-            height: 340px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-
-        /* ==========================================
-           REEMPLAZO: SECCIÓN CONTACTO (CORREGIDO)
-           ========================================== */
-        .contact-section {
-            background-color: var(--bg-light);
-            border-top: 1px solid var(--border-color);
-            padding: 80px 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-            min-height: 90vh;
-            scroll-margin-top: 65px;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: start;
-            width: 100%;
-        }
-
-        .contact-info-channels {
-            text-align: left;
-        }
-
-        .contact-info-channels h2 {
-            font-size: 2.4rem;
-            margin: 0 0 20px 0;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .contact-subtitle {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin: 0 0 35px 0;
-        }
-
-        .info-cards-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-card-link {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 22px;
-            background: var(--bg-white);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-
-        .contact-card-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-            border-color: var(--primary-accent);
-        }
-
-        .card-icon {
-            font-size: 1.6rem;
-        }
-
-        .card-details {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .card-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-
-        .card-value {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-top: 2px;
-            word-break: break-all;
-        }
-
-        /* Formulario B2B */
-        .contact-form-holder {
-            width: 100%;
-        }
-
-        .b2b-clean-form {
-            background: var(--bg-white);
-            padding: 35px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group-b2b {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            text-align: left;
-        }
-
-        .form-group-b2b label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .form-group-b2b input,
-        .form-group-b2b textarea {
-            padding: 14px;
-            font-size: 0.95rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            outline: none;
-            font-family: inherit;
-            background-color: var(--bg-light);
-            transition: all 0.2s;
-        }
-
-        .form-group-b2b input:focus,
-        .form-group-b2b textarea:focus {
-            border-color: var(--primary-accent);
-            background-color: var(--bg-white);
-        }
-
-        .btn-submit-form {
-            width: 100%;
-            padding: 16px;
-            background-color: var(--primary-accent);
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            margin-top: 5px;
-        }
-
-        .btn-submit-form:hover {
-            background-color: var(--primary-hover);
-        }
-
-        /* Modificación a tu regla media query existente */
-        @media (max-width: 990px) {
-            .about-section, .contact-section { 
-                min-height: auto; 
-                padding: 60px 20px; 
-            }
-            .about-grid, .contact-grid { 
-                grid-template-columns: 1fr; 
-                gap: 40px; 
-            }
-            .about-profile-img { 
-                height: 280px; 
-            }
-            .b2b-clean-form {
-                padding: 25px;
-            }
-        }
-
-        /* ==========================================
-           VISTA DINÁMICA: DETALLES DE BUNKER EPP
-           ========================================== */
-        #details-view {
-            display: none;
-            margin-top: 65px;
-            background-color: #ffffff;
-            padding: 40px 80px;
-            box-sizing: border-box;
-        }
-
-        .back-nav-container {
-            max-width: 1200px;
-            margin: 0 auto 30px auto;
-        }
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            background: none;
-            border: none;
-            color: #4a5568;
-            font-size: 0.95rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            padding: 0;
-            transition: color 0.2s;
-            letter-spacing: 0.5px;
-        }
-
-        .back-btn:hover {
-            color: var(--primary-accent);
-        }
-
-        .app-landing-header {
-            max-width: 1200px;
-            margin: 0 auto 40px auto;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 40px;
-        }
-
-        .app-icon-box {
-            width: 120px;
-            height: 120px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .app-icon-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .app-header-info {
-            flex-grow: 1;
-        }
-
-        .app-header-info h2 {
-            font-size: 2.2rem;
-            margin: 0 0 5px 0;
-            color: #2d3748;
-        }
-
-        .app-header-info .developer-tag {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin: 0 0 20px 0;
-        }
-
-        .download-now-btn {
-            display: inline-block;
-            background-color: var(--btn-blue);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 14px 35px;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: background-color 0.2s, transform 0.2s;
-            box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
-        }
-
-        .download-now-btn:hover {
-            background-color: var(--btn-blue-hover);
-            transform: translateY(-1px);
-        }
-
-        .screenshots-section {
-            max-width: 1200px;
-            margin: 0 auto 50px auto;
-        }
-
-        .screenshots-section h4 {
-            font-size: 1.1rem;
-            color: #718096;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0 0 20px 0;
-        }
-
-        .screenshots-container {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            padding-bottom: 15px;
-        }
-
-        .screenshot-item {
-            min-width: 240px;
-            max-width: 240px;
-            height: 480px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border: 1px solid var(--border-color);
-        }
-
-        .screenshot-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .app-description-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            line-height: 1.8;
-            color: #2d3748;
-        }
-
-        .app-description-content h3 {
-            font-size: 1.4rem;
-            border-left: 4px solid var(--btn-blue);
-            padding-left: 12px;
-            margin: 40px 0 20px 0;
-            color: #1a202c;
-            font-weight: 700;
-        }
-
-        .app-description-content p {
-            font-size: 1.05rem;
-            color: #4a5568;
-            margin-bottom: 20px;
-        }
-
-        .app-description-content ul {
-            padding-left: 20px;
-            margin-bottom: 25px;
-        }
-
-        .app-description-content li {
-            margin-bottom: 12px;
-            font-size: 1rem;
-        }
-
-        .alert-box {
-            background-color: #fffaf0;
-            border-left: 4px solid #dd6b20;
-            padding: 20px;
-            border-radius: 4px;
-            margin-top: 30px;
-        }
-
-        .alert-box h5 {
-            margin: 0 0 10px 0;
-            color: #dd6b20;
-            font-size: 1.1rem;
-        }
-
-        footer {
-            background-color: var(--text-dark);
-            color: #a0aec0;
-            padding: 25px 20px;
-            font-size: 0.85rem;
-            text-align: center;
-            margin-top: auto;
-        }
-
-        /* MEDIA QUERIES RESPONSIVAS MÓVIL */
+            background-size: cover; background-position: center; background-attachment: fixed;
+            padding: 100px 80px; color: #ffffff; position: relative; text-align: center; min-height: 600px; scroll-margin-top: 65px; 
+        }
+        .carousel-section h2 { font-size: 2.2rem; margin: 0 0 50px 0; font-weight: 700; letter-spacing: 0.5px; }
+        .categories-grid { display: flex; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
+
+        /* DISEÑO DE TARJETA AUTOMÁTICA */
+        .card { background-color: #ffffff; border-radius: 8px; width: 320px; box-sizing: border-box; text-align: left; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); }
+        .card-image-top { width: 100%; height: 180px; overflow: hidden; background-color: #eaecef; position: relative; }
+        .card-image-top img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        .card.under-construction { opacity: 0.75; background-color: #f7fafc; }
+        .construction-overlay { position: absolute; top: 15px; right: 15px; background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 5px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .card-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+        .card h3 { font-size: 1.25rem; font-weight: 700; margin: 0 0 10px 0; color: #2d3748; }
+        .card p { font-size: 0.9rem; color: #4a5568; line-height: 1.6; margin: 0 0 20px 0; flex-grow: 1; }
+        .card-btn { background-color: var(--primary-accent); color: #ffffff; text-decoration: none; padding: 12px 20px; font-size: 0.9rem; font-weight: 700; border-radius: 4px; text-align: center; display: block; transition: background-color 0.2s; border: none; width: 100%; cursor: pointer; font-family: inherit; }
+        .card-btn:hover { background-color: var(--primary-hover); }
+        .card-btn.disabled { background-color: #cbd5e0; color: #718096; cursor: not-allowed; }
+        /* SECCIÓN SOBRE NOSOTROS */
+        .about-section { min-height: 90vh; display: flex; align-items: center; justify-content: center; padding: 80px 80px; box-sizing: border-box; scroll-margin-top: 65px; background-color: var(--bg-white); }
+        .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: center; width: 100%; }
+        .about-text-content { text-align: left; }
+        .about-text-content h2 { font-size: 2.4rem; color: var(--text-dark); margin: 0 0 25px 0; font-weight: 700; }
+        .corporate-manifesto { font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; margin: 0 0 20px 0; text-align: justify; }
+        .signature-block { margin-top: 35px; display: flex; flex-direction: column; }
+        .engineer-name { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); }
+        .engineer-role { font-size: 0.85rem; color: var(--primary-accent); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-weight: 600; }
+        .about-image-container { display: flex; justify-content: center; width: 100%; }
+        .about-profile-img { width: 100%; max-width: 420px; height: 340px; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+
+        /* SECCIÓN CONTACTO */
+        .contact-section { background-color: var(--bg-light); border-top: 1px solid var(--border-color); padding: 80px 80px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; min-height: 90vh; scroll-margin-top: 65px; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: start; width: 100%; }
+        .contact-info-channels { text-align: left; }
+        .contact-info-channels h2 { font-size: 2.4rem; margin: 0 0 20px 0; color: var(--text-dark); font-weight: 700; }
+        .contact-subtitle { font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin: 0 0 35px 0; }
+        .info-cards-stack { display: flex; flex-direction: column; gap: 20px; }
+        .contact-card-link { display: flex; align-items: center; gap: 20px; padding: 22px; background: var(--bg-white); border: 1px solid var(--border-color); border-radius: 6px; text-decoration: none; transition: all 0.25s ease; }
+        .contact-card-link:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.05); border-color: var(--primary-accent); }
+        .card-icon { font-size: 1.6rem; }
+        .card-details { display: flex; flex-direction: column; text-align: left; }
+        .card-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; font-weight: 600; }
+        .card-value { font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-top: 2px; word-break: break-all; }
+        .contact-form-holder { width: 100%; }
+        .b2b-clean-form { background: var(--bg-white); padding: 35px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.02); display: flex; flex-direction: column; gap: 20px; }
+        .form-group-b2b { display: flex; flex-direction: column; gap: 6px; text-align: left; }
+        .form-group-b2b label { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); }
+        .form-group-b2b input, .form-group-b2b textarea { padding: 14px; font-size: 0.95rem; border: 1px solid var(--border-color); border-radius: 4px; outline: none; font-family: inherit; background-color: var(--bg-light); transition: all 0.2s; }
+        .form-group-b2b input:focus, .form-group-b2b textarea:focus { border-color: var(--primary-accent); background-color: var(--bg-white); }
+        .btn-submit-form { width: 100%; padding: 16px; background-color: var(--primary-accent); color: #ffffff; border: none; border-radius: 4px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background-color 0.2s; margin-top: 5px; }
+        .btn-submit-form:hover { background-color: var(--primary-hover); }
+        /* VISTA DETALLES DINÁMICA */
+        #details-view { display: none; margin-top: 65px; background-color: #ffffff; padding: 40px 80px; box-sizing: border-box; }
+        .back-nav-container { max-width: 1200px; margin: 0 auto 30px auto; }
+        .back-btn { display: inline-flex; align-items: center; background: none; border: none; color: #4a5568; font-size: 0.95rem; font-weight: 700; cursor: pointer; text-decoration: none; padding: 0; transition: color 0.2s; letter-spacing: 0.5px; }
+        .back-btn:hover { color: var(--primary-accent); }
+        .app-landing-header { max-width: 1200px; margin: 0 auto 40px auto; display: flex; align-items: center; gap: 30px; border-bottom: 1px solid var(--border-color); padding-bottom: 40px; }
+        .app-icon-box { width: 120px; height: 120px; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .app-icon-box img { width: 100%; height: 100%; object-fit: cover; }
+        .app-header-info { flex-grow: 1; text-align: left; }
+        .app-header-info h2 { font-size: 2.2rem; margin: 0 0 5px 0; color: #2d3748; }
+        .app-header-info .developer-tag { font-size: 0.95rem; color: var(--text-muted); margin: 0 0 20px 0; }
+        .download-now-btn { display: inline-block; background-color: var(--btn-blue); color: #ffffff; text-decoration: none; padding: 14px 35px; font-size: 1rem; font-weight: 700; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px; transition: background-color 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3); }
+        .download-now-btn:hover { background-color: var(--btn-blue-hover); transform: translateY(-1px); }
+        .screenshots-section { max-width: 1200px; margin: 0 auto 50px auto; text-align: left; }
+        .screenshots-section h4 { font-size: 1.1rem; color: #718096; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 20px 0; }
+        .screenshots-container { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 15px; }
+        .screenshot-item { min-width: 240px; max-width: 240px; height: 480px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid var(--border-color); }
+        .screenshot-item img { width: 100%; height: 100%; object-fit: cover; }
+        .app-description-content { max-width: 1200px; margin: 0 auto; line-height: 1.8; color: #2d3748; text-align: left; }
+        .app-description-content h3 { font-size: 1.4rem; border-left: 4px solid var(--btn-blue); padding-left: 12px; margin: 40px 0 20px 0; color: #1a202c; font-weight: 700; }
+        .app-description-content p { font-size: 1.05rem; color: #4a5568; margin-bottom: 20px; }
+        .app-description-content ul { padding-left: 20px; margin-bottom: 25px; }
+        .app-description-content li { margin-bottom: 12px; font-size: 1rem; }
+        .alert-box { background-color: #fffaf0; border-left: 4px solid #dd6b20; padding: 20px; border-radius: 4px; margin-top: 30px; }
+        .alert-box h5 { margin: 0 0 10px 0; color: #dd6b20; font-size: 1.1rem; }
+
+        footer { background-color: var(--text-dark); color: #a0aec0; padding: 25px 20px; font-size: 0.85rem; text-align: center; margin-top: auto; }
+
+        /* RESPONSIVE */
         @media (max-width: 990px) {
             nav { padding: 12px 20px; flex-direction: column; gap: 12px; text-align: center; }
             .nav-links { gap: 15px; width: 100%; justify-content: center; flex-wrap: wrap; }
-            .nav-links a { font-size: 0.85rem; }
-            
             .hero-section { padding: 60px 20px 40px 20px; margin-top: 110px; }
             .hero-text h1 { font-size: 2.2rem; }
-            .hero-text p { font-size: 1.05rem; }
-            
             .carousel-section { padding: 60px 20px; }
-            .about-section, .contact-section { 
-                min-height: auto; 
-                padding: 60px 20px; 
-            }
-            .about-grid, .contact-grid { 
-                grid-template-columns: 1fr; 
-                gap: 40px; 
-            }
-            .about-profile-img { 
-                height: 280px; 
-            }
-            .b2b-clean-form {
-                padding: 25px;
-            }
-
+            .about-section, .contact-section { min-height: auto; padding: 60px 20px; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-profile-img { height: 280px; }
+            .b2b-clean-form { padding: 25px; }
             #details-view { padding: 30px 20px; margin-top: 110px; }
             .app-landing-header { flex-direction: column; text-align: center; }
         }
@@ -791,56 +181,15 @@
                 <a href="#descargas" class="hero-btn">Descargas</a>
             </div>
         </section>
-
         <section id="descargas" class="carousel-section">
             <h2>Herramientas y Aplicaciones</h2>
-            
-            <div class="categories-grid">
-                
-                <!-- CATEGORÍA 1: ANDROID (ACTIVA CON DETALLES) -->
-                <div class="card">
-                    <div class="card-image-top">
-                        <img src="imagenes/img.chispahorro.apk1.png" alt="Bunker EPP Android">
-                    </div>
-                    <div class="card-body">
-                        <h3>Móvil Android (Bunker EPP)</h3>
-                        <p>Solución móvil definitiva para constructores y contratistas. Diseñada específicamente para el trabajo rudo de campo. Control 100% offline.</p>
-                        <button type="button" onclick="showAppDetails()" class="card-btn" style="width:100%; border:none; cursor:pointer; font-family:inherit;">Ver Detalles</button>
-                    </div>
-                </div>
-
-                <!-- CATEGORÍA 2: IOS (EN CONSTRUCCIÓN) -->
-                <div class="card under-construction">
-                    <div class="card-image-top">
-                        <span class="construction-overlay">Próximamente</span>
-                        <img src="imagenes/img.chispahorro.apk1.png" alt="iOS App" style="filter: grayscale(100%);">
-                    </div>
-                    <div class="card-body">
-                        <h3>Móvil iOS (Apple)</h3>
-                        <p>Estamos adaptando nuestros algoritmos de rendimiento nativo para el ecosistema de Apple. Próximamente disponible en la App Store.</p>
-                        <a href="#" class="card-btn disabled">En Construcción</a>
-                    </div>
-                </div>
-
-                <!-- CATEGORÍA 3: WINDOWS DESKTOP (EN CONSTRUCCIÓN) -->
-                <div class="card under-construction">
-                    <div class="card-image-top">
-                        <span class="construction-overlay">En Desarrollo</span>
-                        <img src="imagenes/img.chispahorro.apk1.png" alt="Windows Desktop" style="filter: grayscale(100%);">
-                    </div>
-                    <div class="card-body">
-                        <h3>Escritorio Windows</h3>
-                        <p>Herramientas SaaS industriales de alta velocidad para administración a gran escala desde sistemas operativos de escritorio.</p>
-                        <a href="#" class="card-btn disabled">En Construcción</a>
-                    </div>
-                </div>
-
+            <div class="categories-grid" id="contenedor-apps">
+                <!-- JavaScript dibujará aquí las tarjetas de forma automática -->
             </div>
         </section>
 
         <section id="nosotros" class="about-section">
             <div class="about-grid">
-                <!-- Bloque Izquierdo: Texto Corporativo B2B -->
                 <div class="about-text-content">
                     <h2>QUIÉNES SOMOS</h2>
                     <p class="corporate-manifesto">
@@ -854,33 +203,25 @@
                         <span class="engineer-role">Líder de Arquitectura de Software</span>
                     </div>
                 </div>
-
-                <!-- Bloque Derecho: Tu Imagen Reemplazable -->
                 <div class="about-image-container">
                     <img src="imagenes/img.chispahorro3.jpeg" alt="Ing. Felix Vargas - ByteCore Labs" class="about-profile-img">
                 </div>
             </div>
         </section>
-
         <section id="contacto" class="contact-section">
             <div class="contact-grid">
-                <!-- Columna Izquierda: Canales de Atención Rápida -->
                 <div class="contact-info-channels">
                     <h2>CONTACTO</h2>
                     <p class="contact-subtitle">¿Tienes un proyecto en mente? Hablemos de ingeniería de software.</p>
-                    
                     <div class="info-cards-stack">
-                        <!-- Enlace a Gmail Funcional -->
-                        <a href="mailto:felixvargassoluciones@gmail.com?subject=Consulta%20B2B%20-%20ByteCore%20Labs" class="contact-card-link" title="Abrir correo electrónico corporativo">
+                        <a href="mailto:felixvargassoluciones@://gmail.com" class="contact-card-link">
                             <div class="card-icon">✉️</div>
                             <div class="card-details">
                                 <span class="card-label">Correo Oficial</span>
                                 <span class="card-value">felixvargassoluciones@gmail.com</span>
                             </div>
                         </a>
-
-                        <!-- Enlace a WhatsApp Técnico de Alta Compatibilidad (Abre app en celular directamente) -->
-                        <a href="https://api.whatsapp.com/send?phone=527201494833&text=Hola%20Ing.%20Felix%20me%20interesa%20una%20solucion%20de%20ByteCore%20Labs" target="_blank" rel="noopener noreferrer" class="contact-card-link" title="Abrir chat de WhatsApp corporativo">
+                        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="contact-card-link">
                             <div class="card-icon">💬</div>
                             <div class="card-details">
                                 <span class="card-label">WhatsApp Corporativo</span>
@@ -890,121 +231,156 @@
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Formulario de Captación -->
                 <div class="contact-form-holder">
-                    <form action="https://formsubmit.co/felixvargassoluciones@gmail.com" method="POST" class="b2b-clean-form">
-                        <!-- Honeypot invisible para evitar el spam -->
+                    <form action="https://formsubmit.co" method="POST" class="b2b-clean-form">
                         <input type="text" name="_honey" style="display:none">
-                        <!-- Estructura del correo final formateada como tabla limpia -->
                         <input type="hidden" name="_template" value="table">
-                        <!-- Redirección automática de regreso a tu SPA de producción -->
-                        <input type="hidden" name="_next" value="https://felixvargassoluciones-stack.github.io/web-store/#inicio/">
+                        <input type="hidden" name="_next" value="https://github.io">
 
                         <div class="form-group-b2b">
                             <label for="form-name">Nombre Completo / Empresa</label>
                             <input type="text" id="form-name" name="Nombre" required placeholder="Ej. Constructora Alfa">
                         </div>
-
                         <div class="form-group-b2b">
                             <label for="form-email">Correo Electrónico Corporativo</label>
                             <input type="email" id="form-email" name="Email" required placeholder="ejemplo@empresa.com">
                         </div>
-
                         <div class="form-group-b2b">
                             <label for="form-phone">Teléfono de Contacto</label>
                             <input type="tel" id="form-phone" name="Telefono" required placeholder="Ej. +52 720 149 4833">
                         </div>
-
                         <div class="form-group-b2b">
                             <label for="form-message">Mensaje / Requerimiento</label>
                             <textarea id="form-message" name="Mensaje" rows="5" required placeholder="Describe las especificaciones técnicas o necesidades de tu proyecto..."></textarea>
                         </div>
-
                         <button type="submit" class="btn-submit-form">Enviar Requerimiento</button>
                     </form>
                 </div>
             </div>
         </section>
-
     </div> <!-- FIN DE LA VISTA PRINCIPAL -->
-    <!-- ENTORNO CONTENEDOR VISTA DETALLES (Oculto al inicio) -->
-    <div id="details-view">
-
-        <div class="back-nav-container">
-            <button class="back-btn" onclick="showMainStore('descargas')">← VOLVER AL REPOSITORIO</button>
-        </div>
-
-        <header class="app-landing-header">
-            <div class="app-icon-box">
-                <img src="imagenes/img.chispahorro.apk1.png" alt="Bunker EPP Logo">
-            </div>
-            <div class="app-header-info">
-                <h2>BUNKER EPP V1.7</h2>
-                <p class="developer-tag">Desarrollador Verificado • Ejecutable Nativo Android</p>
-                <a href="app/chispahorro.apk" download="Bunker_EPP_v1.7.apk" class="download-now-btn">Download Now</a>
-            </div>
-        </header>
-
-        <section class="screenshots-section">
-            <h4>Capturas de pantalla en entorno real</h4>
-            <div class="screenshots-container">
-                <div class="screenshot-item"><img src="imagenes/img.chispahorro.apk1.png" alt="Captura 1"></div>
-                <div class="screenshot-item"><img src="imagenes/img.chispahorro.apk1.png" alt="Captura 2"></div>
-                <div class="screenshot-item"><img src="imagenes/img.chispahorro.apk1.png" alt="Captura 3"></div>
-                <div class="screenshot-item"><img src="imagenes/img.chispahorro.apk1.png" alt="Captura 4"></div>
-            </div>
-        </section>
-
-        <article class="app-description-content">
-            <h3>Descripción Operativa Completa</h3>
-            <p><strong>DIGITALIZA TU OBRA CON BUNKER EPP 🛡️🦺</strong></p>
-            <p>¿Sigues firmando la entrega de EPP en hojas de papel que terminan manchadas, rotas o perdidas? Cuando llega una auditoría de la STPS o el IMSS, el papel no te va a salvar. Llegó la hora de tomar el control definitivo con Bunker EPP, la solución móvil creada para el trabajo rudo de campo. Cumple con la NOM-017 de la STPS directamente desde tu celular de forma automatizada.</p>
-
-            <h3>🎁 Lo que llevas GRATIS (Versión Free)</h3>
-            <ul>
-                <li>📊 <strong>Control 100% Offline:</strong> Registra datos en sótanos, excavaciones o zonas sin señal. Todo se guarda seguro en tu teléfono.</li>
-                <li>✍️ <strong>Firmas Digitales de Conformidad:</strong> Captura la firma del trabajador directamente en la pantalla. Respaldo legal inmediato ante multas.</li>
-                <li>📉 <strong>Auditoría de Costos:</strong> Desglosa e identifica el gasto de insumos por cada frente de trabajo y subcontratista.</li>
-                <li>📲 <strong>Reportes Rápidos:</strong> Exporta y comparte las evidencias del día en formato de imagen por WhatsApp o correo electrónico.</li>
-            </ul>
-
-            <h3>🚀 ¿Quieres poder restrictivo? Pasa al PLAN PREMIUM</h3>
-            <ul>
-                <li>☁️ <strong>Respaldo en la Nube Bajo tu Control:</strong> Tú eliges el momento exacto para sincronizar el lote de evidencias de forma masiva sin gastar tus datos en la obra.</li>
-                <li>🗂️ <strong>Descarga Masiva del SUA:</strong> Olvídate de registrar trabajadores a mano. Importa el padrón completo del Sistema Único de Autodeterminación desde la computadora en un solo clic.</li>
-                <li>📄 <strong>Generador Avanzado de PDF:</strong> Crea bitácoras oficiales y hojas de control en formato PDF en segundos, listas para enviar a gerencia o dependencias gubernamentales.</li>
-                <li>💸 El EPP que no se registra es dinero que regalas. Protege a tu empresa ante costosas multas laborales, reduce tiempos de administración en campo y mantén tus costos bajo un estricto control.</li>
-            </ul>
-
-            <div class="alert-box">
-                <h5>⚠️ NOTA IMPORTANTE DE INSTALACIÓN (Para teléfonos Android)</h5>
-                <p>Al ser un software industrial de distribución directa (fuera de Play Store), cuando abras el archivo en tu celular el sistema operativo te mostrará una alerta de seguridad de <em>"Aplicación Desconocida"</em>. No te preocupes, el archivo está 100% verificado por nuestro equipo y libre de riesgos. Sigue estos 3 pasos rápidos para instalarlo:</p>
-                <ol style="margin-left: 20px; font-size: 0.95rem;">
-                    <li>Presiona el archivo descargado. Si aparece el bloqueo, dale clic en <strong>Configuración o Ajustes</strong>.</li>
-                    <li>Activa el interruptor que dice <strong>Permitir desde esta fuente</strong> o <em>Autorizar aplicaciones desconocidas</em>.</li>
-                    <li>Regresa a tu pantalla y dale clic en <strong>Instalar</strong>. ¡Listo! Ya puedes usar BUNKER EPP 100% Offline.</li>
-                </ol>
-                <p style="margin-top: 15px; font-weight: 700; color: #dd6b20;">¡Descárgala hoy mismo y toma el control total de tu seguridad industrial!</p>
-            </div>
-        </article>
-
-    </div> <!-- FIN DE LA VISTA DE DETALLES -->
+    <!-- ENTORNO CONTENEDOR VISTA DETALLES (JavaScript inyectará el contenido aquí adentro) -->
+    <div id="details-view"></div> 
 
     <footer>
         ByteCore Labs. All rights reserved. © 2026
     </footer>
-
-    <!-- INTERRUPTOR DINÁMICO DE PANTALLAS (SPA ENGINE) -->
     <script>
-        function appDetailsView() {
+        let baseDatosApps = [];
+
+        // 1. Cargar archivo datos.json automáticamente al abrir la página
+        async function cargarDatos() {
+            try {
+                const respuesta = await fetch('datos.json');
+                baseDatosApps = await respuesta.json();
+                renderizarTienda();
+            } catch (error) {
+                console.error("Error cargando los archivos de datos.json: ", error);
+            }
+        }
+
+        // 2. Dibujar las tarjetas de la página principal según el JSON
+        function renderizarTienda() {
+            const contenedor = document.getElementById('contenedor-apps');
+            if (!contenedor) return;
+            contenedor.innerHTML = '';
+
+            baseDatosApps.forEach(app => {
+                if(app.en_construccion) {
+                    contenedor.innerHTML += `
+                        <div class="card under-construction">
+                            <div class="card-image-top">
+                                <span class="construction-overlay">${app.badge_texto || 'Próximamente'}</span>
+                                <img src="${app.imagen_tarjeta}" alt="${app.titulo}" style="filter: grayscale(100%);">
+                            </div>
+                            <div class="card-body">
+                                <h3>${app.titulo}</h3>
+                                <p>${app.descripcion_corta}</p>
+                                <a href="#" class="card-btn disabled">En Construcción</a>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    contenedor.innerHTML += `
+                        <div class="card">
+                            <div class="card-image-top">
+                                <img src="${app.imagen_tarjeta}" alt="${app.titulo}">
+                            </div>
+                            <div class="card-body">
+                                <h3>${app.titulo}</h3>
+                                <p>${app.descripcion_corta}</p>
+                                <button type="button" onclick="verDetallesApp('${app.id}')" class="card-btn">Ver Detalles</button>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        // 3. Dibujar la pantalla de detalles con los datos exactos del elemento clicado
+        function verDetallesApp(idApp) {
+            const app = baseDatosApps.find(a => a.id === idApp);
+            if (!app) return;
+
+            const vistaDetalles = document.getElementById('details-view');
+            if (!vistaDetalles) return;
+            
+            // Construir descripciones y estructuras de listas opcionales
+            let textoDescripcionLarga = app.descripcion_larga || `<p><strong>${app.titulo}</strong></p><p>${app.descripcion_corta}</p>`;
+            let itemsGratis = app.gratis_lista ? app.gratis_lista.map(i => `<li>${i}</li>`).join('') : '';
+            let itemsPremium = app.premium_lista ? app.premium_lista.map(i => `<li>${i}</li>`).join('') : '';
+            
+            // Si el archivo JSON no provee una galería de capturas, reusamos la imagen de la tarjeta por defecto
+            let arregloCapturas = app.capturas && app.capturas.length > 0 ? app.capturas : [app.imagen_tarjeta, app.imagen_tarjeta, app.imagen_tarjeta];
+            let itemsCapturas = arregloCapturas.map(c => `<div class="screenshot-item"><img src="${c}" alt="Captura"></div>`).join('');
+
+            vistaDetalles.innerHTML = `
+                <div class="back-nav-container">
+                    <button class="back-btn" onclick="showMainStore('descargas')">← VOLVER AL REPOSITORIO</button>
+                </div>
+
+                <header class="app-landing-header">
+                    <div class="app-icon-box">
+                        <img src="${app.imagen_tarjeta}" alt="${app.titulo}">
+                    </div>
+                    <div class="app-header-info">
+                        <h2>${app.subtitulo || app.titulo}</h2>
+                        <p class="developer-tag">${app.tag || 'Desarrollador Verificado • Ejecutable Nativo'}</p>
+                        <a href="${app.archivo_descarga || '#'}" download="${app.nombre_archivo_guardar || 'archivo'}" class="download-now-btn">Download Now</a>
+                    </div>
+                </header>
+
+                <section class="screenshots-section">
+                    <h4>Capturas de pantalla en entorno real</h4>
+                    <div class="screenshots-container">${itemsCapturas}</div>
+                </section>
+
+                <article class="app-description-content">
+                    <h3>Descripción Operativa Completa</h3>
+                    <div>${textoDescripcionLarga}</div>
+
+                    ${itemsGratis ? `<h3>🎁 Lo que llevas GRATIS (Versión Free)</h3><ul>\${itemsGratis}</ul>` : ''}
+                    ${itemsPremium ? `<h3>🚀 ¿Quieres poder restrictivo? Pasa al PLAN PREMIUM</h3><ul>\${itemsPremium}</ul>` : ''}
+
+                    <div class="alert-box">
+                        <h5>⚠️ NOTA IMPORTANTE DE INSTALACIÓN</h5>
+                        <p>Al ser un software o documento de distribución directa corporativa, tu sistema operativo podría alertarte sobre un "Origen o Aplicación Desconocida". No te preocupes, todos nuestros recursos y ejecutables están 100% verificados en nuestro laboratorio y libres de riesgos.</p>
+                    </div>
+                </article>
+            `;
+
             document.getElementById('main-store-view').style.display = 'none';
-            document.getElementById('details-view').style.display = 'block';
+            vistaDetalles.style.display = 'block';
             window.scrollTo(0, 0);
         }
 
-        function mainRepositoryView(targetSectionId) {
-            document.getElementById('details-view').style.display = 'none';
-            document.getElementById('main-store-view').style.display = 'block';
+        // 4. Navegación básica para volver a la tienda principal
+        function showMainStore(targetSectionId) {
+            const vistaDetalles = document.getElementById('details-view');
+            const vistaPrincipal = document.getElementById('main-store-view');
+            
+            if (vistaDetalles) vistaDetalles.style.display = 'none';
+            if (vistaPrincipal) vistaPrincipal.style.display = 'block';
             
             if (targetSectionId) {
                 setTimeout(function() {
@@ -1014,14 +390,8 @@
             }
         }
 
-        function showAppDetails() {
-            appDetailsView();
-        }
-
-        function showMainStore(targetId) {
-            mainRepositoryView(targetId);
-        }
-
+        // Inicializar la carga asíncrona de datos al abrir el sitio
+        window.onload = cargarDatos;
     </script>
 </body>
 </html>
