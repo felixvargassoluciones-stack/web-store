@@ -30,6 +30,7 @@
       "imagenes/img.chispahorro.apk1.png"
     ]
   },
+
   {
     "id": "ejemplo-windows",
     "categoria": "Windows",
@@ -56,5 +57,39 @@
       "imagenes/img.chispahorro.apk1.png",
       "imagenes/img.chispahorro.apk1.png"
     ]
+  },
+
+{
+    "id": "ejemplo-windows",
+    "categoria": "Windows",
+    "categoria_icono": "💻",
+    "titulo": "Software de Escritorio Windows",
+    "subtitulo": "SISTEMA DESKTOP V1.0",
+    "tag": "Instalador Nativo • Sistema de Escritorio",
+    "descripcion_corta": "Herramienta SaaS industrial de alta velocidad para administración y gestión a gran escala.",
+    "imagen_tarjeta": "imagenes/img.chispahorro.apk1.png",
+    "archivo_descarga": "app/instalador.exe",
+    "nombre_archivo_guardar": "Instalador_ByteCore.exe",
+    "en_construccion": false,
+    "badge_texto": "",
+    "descripcion_larga": "<p>Optimiza la gestión administrativa de tu infraestructura empresarial con nuestro entorno de escritorio optimizado para altas cargas de procesamiento de datos offline.</p>",
+    "gratis_lista": [
+      "Instalación local rápida sin dependencias.",
+      "Sincronización híbrida bajo demanda."
+    ],
+    "premium_lista": [
+      "Soporte multiusuario simultáneo en red local.",
+      "Módulo avanzado de auditoría fiscal incorporado."
+    ],
+    "capturas": [
+      "imagenes/img.chispahorro.apk1.png",
+      "imagenes/img.chispahorro.apk1.png"
+    ]
   }
+
+
+
+
+
+
 ]
