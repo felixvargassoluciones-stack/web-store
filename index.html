@@ -208,9 +208,9 @@
                 </div>
             </div>
         </section>
-        <section id="contacto" class="contact-section">
-            <div class="contact-grid">
-                <div class="contact-info-channels">
+                <section id="contacto" class="contact-section">
+            <div class="contact-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; text-align: center;">
+                <div class="contact-info-channels" style="text-align: center;">
                     <h2>CONTACTO</h2>
                     <p class="contact-subtitle">¿Tienes un proyecto en mente? Hablemos de ingeniería de software.</p>
                     <div class="info-cards-stack">
@@ -230,34 +230,9 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="contact-form-holder">
-                    <form action="https://formsubmit.co" method="POST" class="b2b-clean-form">
-                        <input type="text" name="_honey" style="display:none">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://github.io">
-
-                        <div class="form-group-b2b">
-                            <label for="form-name">Nombre Completo / Empresa</label>
-                            <input type="text" id="form-name" name="Nombre" required placeholder="Ej. Constructora Alfa">
-                        </div>
-                        <div class="form-group-b2b">
-                            <label for="form-email">Correo Electrónico Corporativo</label>
-                            <input type="email" id="form-email" name="Email" required placeholder="ejemplo@empresa.com">
-                        </div>
-                        <div class="form-group-b2b">
-                            <label for="form-phone">Teléfono de Contacto</label>
-                            <input type="tel" id="form-phone" name="Telefono" required placeholder="Ej. +52 720 149 4833">
-                        </div>
-                        <div class="form-group-b2b">
-                            <label for="form-message">Mensaje / Requerimiento</label>
-                            <textarea id="form-message" name="Mensaje" rows="5" required placeholder="Describe las especificaciones técnicas o necesidades de tu proyecto..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit-form">Enviar Requerimiento</button>
-                    </form>
-                </div>
             </div>
         </section>
+
     </div> <!-- FIN DE LA VISTA PRINCIPAL -->
     <!-- ENTORNO CONTENEDOR VISTA DETALLES (JavaScript inyectará el contenido aquí adentro) -->
     <div id="details-view"></div> 
