@@ -323,7 +323,6 @@
         }
 
         // 5. Dibujar la pantalla de detalles de forma limpia interpretando las listas reales sin caracteres de escape
-               // 5. Dibujar la pantalla de detalles limpia sin caracteres de escape incorrectos
         function verDetallesApp(idApp) {
             const app = baseDatosApps.find(a => a.id === idApp);
             if (!app) return;
@@ -336,7 +335,6 @@
             let arregloCapturas = app.capturas && app.capturas.length > 0 ? app.capturas : [app.imagen_tarjeta, app.imagen_tarjeta, app.imagen_tarjeta];
             let itemsCapturas = arregloCapturas.map(c => `<div class="screenshot-item"><img src="${c}" alt="Captura"></div>`).join('');
 
-            // Inyección directa y limpia sin diagonales de escape
             vistaDetalles.innerHTML = `
                 <div class="back-nav-container">
                     <button class="back-btn" onclick="showMainStore('descargas')">← VOLVER AL REPOSITORIO</button>
@@ -358,22 +356,19 @@
                 <article class="app-description-content">
                     <h3>Descripción Operativa Completa</h3>
                     <div>${app.descripcion_larga}</div>
-                    
-                    ${itemsGratis ? `<h3>🎁 Lo que llevas GRATIS (Versión Free)</h3><ul>\${itemsGratis}</ul>` : ''}
-                    ${itemsPremium ? `<h3>🚀 ¿Quieres poder restrictivo? Pasa al PLAN PREMIUM</h3><ul>\${itemsPremium}</ul>` : ''}
-                    
+                    \${itemsGratis ? \`<h3>🎁 Lo que llevas GRATIS (Versión Free)</h3><ul></ul>\` : ''}
+                    \${itemsPremium ? \`<h3>🚀 ¿Quieres poder restrictivo? Pasa al PLAN PREMIUM</h3><ul></ul>\` : ''}
                     <div class="alert-box">
                         <h5>⚠️ NOTA IMPORTANTE DE INSTALACIÓN</h5>
                         <p>Al ser un software o documento de distribución directa corporativa, tu sistema operativo podría alertarte sobre un "Origen o Aplicación Desconocida". No te preocupes, todos nuestros recursos y ejecutables están 100% verificados de forma interna en nuestro laboratorio y libres de riesgos.</p>
                     </div>
                 </article>
-            `;
+            `.replace(/\${itemsGratis}/g, itemsGratis).replace(/\${itemsPremium}/g, itemsPremium);
 
             document.getElementById('main-store-view').style.display = 'none';
             vistaDetalles.style.display = 'block';
             window.scrollTo(0, 0);
         }
-
 
         // 6. Navegación SPA interna de cambio de secciones
         function showMainStore(targetSectionId) {
