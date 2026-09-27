@@ -227,19 +227,15 @@
     <footer>
         ByteCore Labs. All rights reserved. © 2026
     </footer>
-    <script>
+        <script>
         let baseDatosApps = [];
 
-        // 1. Cargar archivo datos.json automáticamente al abrir la página
+        // 1. Cargar archivo datos.json forzando la actualización de caché con un parámetro de tiempo
         async function cargarDatos() {
             try {
-                const respuesta = await fetch('datos.json');
+                const respuesta = await fetch('datos.json?v=' + new Date().getTime());
                 baseDatosApps = await respuesta.json();
-                
-                // Primero dibujamos las tarjetas para que existan en el navegador
                 renderizarTienda();
-                
-                // Inmediatamente después creamos los botones basados en las tarjetas existentes
                 crearBotonesCategorias();
             } catch (error) {
                 console.error("Error crítico cargando la base de datos JSON: ", error);
@@ -260,7 +256,6 @@
             contenedorFiltros.id = 'filtro-categorias-container';
             contenedorFiltros.style.cssText = 'display: flex; justify-content: center; gap: 15px; margin: -20px auto 40px auto; flex-wrap: wrap; max-width: 1200px; padding: 0 20px; box-sizing: border-box;';
 
-            // Botón Mostrar Todo activo por defecto con su color naranja corporativo fijo
             contenedorFiltros.innerHTML = `<button class="btn-filtro active" data-categoria="todos" onclick="filtrarPorCategoria('todos')" style="background-color: #e05e2b; color: #ffffff; border: none; padding: 10px 20px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">🌐 Mostrar Todo</button>`;
 
             categoriasUnicas.forEach(cat => {
@@ -275,12 +270,10 @@
             });
 
             const tituloH2 = seccionDescargas.querySelector('h2');
-            if (tituloH2) {
-                tituloH2.insertAdjacentElement('afterend', contenedorFiltros);
-            }
+            if (tituloH2) tituloH2.insertAdjacentElement('afterend', contenedorFiltros);
         }
 
-        // 3. Filtrar las aplicaciones al hacer clic en los botones (Actualiza colores de selección)
+        // 3. Filtrar las aplicaciones al hacer clic en los botones
         function filtrarPorCategoria(categoriaSeleccionada) {
             const botones = document.querySelectorAll('.btn-filtro');
             botones.forEach(btn => {
@@ -301,6 +294,7 @@
                 renderizarTienda(categoriaSeleccionada);
             }
         }
+
         // 4. Dibujar las tarjetas en la cuadrícula de inicio según la categoría
         function renderizarTienda(categoriaFiltro = null) {
             const contenedor = document.getElementById('contenedor-apps');
@@ -328,7 +322,7 @@
             });
         }
 
-        // 5. Dibujar la pantalla de detalles de forma limpia interpretando las listas reales
+        // 5. Dibujar la pantalla de detalles de forma limpia interpretando las listas reales sin caracteres de escape
         function verDetallesApp(idApp) {
             const app = baseDatosApps.find(a => a.id === idApp);
             if (!app) return;
@@ -362,14 +356,14 @@
                 <article class="app-description-content">
                     <h3>Descripción Operativa Completa</h3>
                     <div>${app.descripcion_larga}</div>
-                    ${itemsGratis ? `<h3>🎁 Lo que llevas GRATIS (Versión Free)</h3><ul>\${itemsGratis}</ul>` : ''}
-                    ${itemsPremium ? `<h3>🚀 ¿Quieres poder restrictivo? Pasa al PLAN PREMIUM</h3><ul>\${itemsPremium}</ul>` : ''}
+                    \${itemsGratis ? \`<h3>🎁 Lo que llevas GRATIS (Versión Free)</h3><ul>\${itemsGratis}</ul>\` : ''}
+                    \${itemsPremium ? \`<h3>🚀 ¿Quieres poder restrictivo? Pasa al PLAN PREMIUM</h3><ul>\${itemsPremium}</ul>\` : ''}
                     <div class="alert-box">
                         <h5>⚠️ NOTA IMPORTANTE DE INSTALACIÓN</h5>
                         <p>Al ser un software o documento de distribución directa corporativa, tu sistema operativo podría alertarte sobre un "Origen o Aplicación Desconocida". No te preocupes, todos nuestros recursos y ejecutables están 100% verificados de forma interna en nuestro laboratorio y libres de riesgos.</p>
                     </div>
                 </article>
-            `;
+            `.replace(/\${itemsGratis}/g, itemsGratis).replace(/\${itemsPremium}/g, itemsPremium);
 
             document.getElementById('main-store-view').style.display = 'none';
             vistaDetalles.style.display = 'block';
@@ -388,7 +382,6 @@
             }
         }
 
-        // Despliegue automático de datos iniciales
         window.onload = cargarDatos;
     </script>
 </body>
