@@ -208,7 +208,8 @@
                                 <span class="card-value">felixvargassoluciones@gmail.com</span>
                             </div>
                         </a>
-                                                <a href="#" class="contact-card-link" onclick="event.preventDefault(); const cel = '527201494833'; const txt = encodeURIComponent('Hola Ing. Felix me interesa una solucion de ByteCore Labs'); if (window.innerWidth < 750) { window.location.href = 'whatsapp://send?phone=' + cel + '&text=' + txt; } else { window.open('https://whatsapp.com' + cel + '&text=' + txt, '_blank'); }">
+                                                     <a href="#" class="contact-card-link" onclick="event.preventDefault(); abrirWhatsAppSoporte();">
+
 
                             <div class="card-icon">💬</div>
                             <div class="card-details">
@@ -403,6 +404,32 @@
                 }, 50);
             }
         }
+
+        // Función inteligente para detectar pantalla y abrir el WhatsApp correcto sin errores de ruta
+        function abrirWhatsAppSoporte() {
+            const telefono = '527201494833';
+            const mensajeOriginal = 'Hola Ing. Felix me interesa una solucion de ByteCore Labs';
+            const textoCodificado = encodeURIComponent(mensajeOriginal);
+
+            // Si la pantalla mide menos de 750px (Celulares)
+            if (window.innerWidth < 750) {
+                // Intenta forzar la aplicación nativa del teléfono directamente
+                window.location.href = 'whatsapp://send?phone=' + telefono + '&text=' + textoCodificado;
+                
+                // Respaldo por si el celular no tiene instalada la app nativa o bloquea el protocolo
+                setTimeout(() => {
+                    window.location.href = 'https://whatsapp.com' + telefono + '&text=' + textoCodificado;
+                }, 800);
+            } 
+            // Si mide 750px o más (Computadoras de escritorio o Laptops)
+            else {
+                // Abre de forma segura la API oficial en una pestaña externa limpia sin romper el dominio
+                window.open('https://whatsapp.com' + telefono + '&text=' + textoCodificado, '_blank');
+            }
+        }
+
+
+
 
         window.onload = cargarDatos;
     </script>
