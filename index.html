@@ -406,23 +406,24 @@
             }
         }
 
-                // Función responsiva de alta fidelidad para control de comunicación
+                // Función responsiva de alta fidelidad para control de comunicación sin errores de ruta
         function dispararWhatsAppCorporativo() {
             const numeroCelular = '527201494833';
             const mensajeSoporte = 'Hola Ing. Felix me interesa una solucion de ByteCore Labs';
             const textoLimpio = encodeURIComponent(mensajeSoporte);
 
-            // EVALUACIÓN DE ENTORNO: Menor a 750px = Teléfono Celular
+            // 1. CONDICIÓN PARA CELULARES (Pantallas menores a 750px)
             if (window.innerWidth < 750) {
-                // Abre directo el protocolo de la aplicación móvil sin tocar el navegador web
+                // Abre directo el chat interno de la app del teléfono sin abrir el explorador de fondo
                 window.location.href = 'whatsapp://send?phone=' + numeroCelular + '&text=' + textoLimpio;
             } 
-            // EVALUACIÓN DE ENTORNO: 750px o mayor = Computadora de Escritorio / Laptop
+            // 2. CONDICIÓN PARA PC / LAPTOPS (Pantallas de 750px o más)
             else {
-                // Abre el servicio oficial de comunicación web en una pestaña externa limpia sin alterar la tienda
+                // Abre la API oficial de Meta estructurada de forma perfecta en una pestaña limpia de fondo
                 window.open('https://whatsapp.com' + numeroCelular + '&text=' + textoLimpio, '_blank');
             }
         }
+
 
 
 
