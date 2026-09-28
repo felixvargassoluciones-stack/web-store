@@ -406,7 +406,7 @@
             }
         }
 
-                    // Función responsiva de alta fidelidad para control de comunicación sin errores de ruta
+                  // Función responsiva de alta fidelidad para control de comunicación sin errores de ruta
         function dispararWhatsAppCorporativo() {
             const numeroCelular = '527201494833';
             const mensajeSoporte = 'Hola Ing. Felix me dar mas informacion?';
@@ -414,15 +414,16 @@
 
             // 1. CONDICIÓN PARA CELULARES (Pantallas menores a 750px)
             if (window.innerWidth < 750) {
-                // Abre directo el chat interno de la app del teléfono sin abrir el explorador de fondo
+                // Abre directo el chat nativo de la app del teléfono sin pasar por el navegador
                 window.location.href = 'whatsapp://send?phone=' + numeroCelular + '&text=' + textoLimpio;
             } 
             // 2. CONDICIÓN PARA PC / LAPTOPS (Pantallas de 750px o más)
             else {
-                // Fuerzas la apertura directa en WhatsApp Web para máxima comodidad en computadoras
-                window.open('https://whatsapp.com' + numeroCelular + '&text=' + textoLimpio, '_blank');
+                // Usa el enlace universal optimizado para computadoras recomendado por Meta
+                window.open('https://wa.me/' + numeroCelular + '?text=' + textoLimpio, '_blank');
             }
         }
+
 
 
 
