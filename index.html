@@ -406,28 +406,24 @@
             }
         }
 
-        // Función inteligente para detectar pantalla y abrir el WhatsApp correcto sin errores de ruta
-        function abrirWhatsAppSoporte() {
-            const telefono = '527201494833';
-            const mensajeOriginal = 'Hola Ing. Felix me interesa una solucion de ByteCore Labs';
-            const textoCodificado = encodeURIComponent(mensajeOriginal);
+                // Función responsiva de alta fidelidad para control de comunicación
+        function dispararWhatsAppCorporativo() {
+            const numeroCelular = '527201494833';
+            const mensajeSoporte = 'Hola Ing. Felix me interesa una solucion de ByteCore Labs';
+            const textoLimpio = encodeURIComponent(mensajeSoporte);
 
-            // Si la pantalla mide menos de 750px (Celulares)
+            // EVALUACIÓN DE ENTORNO: Menor a 750px = Teléfono Celular
             if (window.innerWidth < 750) {
-                // Intenta forzar la aplicación nativa del teléfono directamente
-                window.location.href = 'whatsapp://send?phone=' + telefono + '&text=' + textoCodificado;
-                
-                // Respaldo por si el celular no tiene instalada la app nativa o bloquea el protocolo
-                setTimeout(() => {
-                    window.location.href = 'https://whatsapp.com' + telefono + '&text=' + textoCodificado;
-                }, 800);
+                // Abre directo el protocolo de la aplicación móvil sin tocar el navegador web
+                window.location.href = 'whatsapp://send?phone=' + numeroCelular + '&text=' + textoLimpio;
             } 
-            // Si mide 750px o más (Computadoras de escritorio o Laptops)
+            // EVALUACIÓN DE ENTORNO: 750px o mayor = Computadora de Escritorio / Laptop
             else {
-                // Abre de forma segura la API oficial en una pestaña externa limpia sin romper el dominio
-                window.open('https://whatsapp.com' + telefono + '&text=' + textoCodificado, '_blank');
+                // Abre el servicio oficial de comunicación web en una pestaña externa limpia sin alterar la tienda
+                window.open('https://whatsapp.com' + numeroCelular + '&text=' + textoLimpio, '_blank');
             }
         }
+
 
 
 
