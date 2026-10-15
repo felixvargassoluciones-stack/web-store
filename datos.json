@@ -10,7 +10,7 @@
     "imagen_tarjeta": "imagenes/img.chispahorro.apk1.png",
     "archivo_descarga": "app/chispahorro.apk",
     "nombre_archivo_guardar": "Bunker_EPP_v1.7.apk",
-    "en_construccion": true,
+    "en_construccion": false,
     "badge_texto": "",
     "descripcion_larga": "<p><strong>DIGITALIZA TU OBRA CON BUNKER EPP 🛡️🦺</strong></p><p>¿Sigues firmando la entrega de EPP en hojas de papel que terminan manchadas, rotas o perdidas? Cuando llega una auditoría de la STPS o el IMSS, el papel no te va a salvar. Llegó la hora de tomar el control definitivo con Bunker EPP, la solución móvil creada para el trabajo rudo de campo. Cumple con la NOM-017 de la STPS directamente desde tu celular de forma automatizada.</p>",
     "gratis_lista": [
